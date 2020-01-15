@@ -43,23 +43,26 @@ w_vec_0 = [0 0 1;
            1 0 0;
            0 1 0;
            1 0 0]';
-       
+          
 %% g_st0 calculation(or M matrix from Park's paper)
 HomePosition = [0 0 90 0 0 0]';
 robot.MoveJ(HomePosition);
-Pc0_1_in_tracker = get_SMR_pos(1);
-Pc0_2_in_tracker = get_SMR_pos(2);
-Pc0_3_in_tracker = get_SMR_pos(3);
-P_c0_n_1 = T_tracker_ref\[Pc0_1_in_tracker;1];                                     % represents in reference frame
-P_c0_n_2 = T_tracker_ref\[Pc0_2_in_tracker;1];
-P_c0_n_3 = T_tracker_ref\[Pc0_3_in_tracker;1];                                  % represents in reference frame                        
+% Pc0_1_in_tracker = get_SMR_pos(1);
+% Pc0_2_in_tracker = get_SMR_pos(2);
+% Pc0_3_in_tracker = get_SMR_pos(3);
+% P_c0_n_1 = T_tracker_ref\[Pc0_1_in_tracker;1];                                     % represents in reference frame
+% P_c0_n_2 = T_tracker_ref\[Pc0_2_in_tracker;1];
+% P_c0_n_3 = T_tracker_ref\[Pc0_3_in_tracker;1];                                  % represents in reference frame                        
+P_c0_n_1 = [-124,333,951 1]';
+P_c0_n_2 = [-124,513,841 1]';
+P_c0_n_3 = [-124,293,841 1]';
 
 %% norminal twist_matrix_0; size = 6 x 7
 twist_matrix_n = [cross(q_vec_0,w_vec_0);w_vec_0];               % nominal twist
 twist_matrix_copy = twist_matrix_n;
 
 %% read SMR positions and joint angles from files
-num_of_pts = 50;
+num_of_pts = 33;
 theta_random_vec = GetRandomAngles(num_of_pts);
 % theta_random_vec = importdata('test_angles.txt');
 theta_random_vec_deg = rad2deg(theta_random_vec);                  
@@ -178,6 +181,7 @@ for i=1:num_of_test_points
 end
 disp 'norm of distance deviation:'
 norm(deviation(1:3,:))
+[P_c0_n_1 P_c0_n_2 P_c0_n_3]
 
 %% some useful functions
 % get reference frame using 3 SMRs
@@ -217,22 +221,22 @@ function pos = get_SMR_pos(SMR_n)
     global tracker;
     if(SMR_n == 1)
         SMR = RDK.Item('SMR1');
-        Pose = [     1.000000,    -0.000000,    -0.000000,   -70.000000 ;
-                     -0.000000,     1.000000,     0.000000,   -70.000000 ;
-                     -0.000000,     0.000000,     1.000000,    42.500000 ;
-                      0.000000,     0.000000,     0.000000,     1.000000 ];
+        Pose = [     1.000000,    -0.000000,    -0.000000,  -110.000000 ;
+     -0.000000,     1.000000,     0.000000,     0.000000 ;
+     -0.000000,     0.000000,     1.000000,    35.000000 ;
+      0.000000,     0.000000,     0.000000,     1.000000 ];
     elseif(SMR_n == 2)
         SMR = RDK.Item('SMR2');
-        Pose = [     1.000000,    -0.000000,    -0.000000,   -70.000000 ;
-                     -0.000000,     1.000000,     0.000000,    70.000000 ;
-                     -0.000000,     0.000000,     1.000000,    42.500000 ;
-                      0.000000,     0.000000,     0.000000,     1.000000 ];
+        Pose = [      1.000000,    -0.000000,    -0.000000,     0.000000 ;
+     -0.000000,     1.000000,     0.000000,   110.000000 ;
+     -0.000000,     0.000000,     1.000000,    35.000000 ;
+      0.000000,     0.000000,     0.000000,     1.000000 ];
     elseif(SMR_n == 3)
         SMR = RDK.Item('SMR3');
-        Pose = [     1.000000,    -0.000000,    -0.000000,    70.000000 ;
-                     -0.000000,     1.000000,     0.000000,   -70.000000 ;
-                     -0.000000,     0.000000,     1.000000,    42.500000 ;
-                      0.000000,     0.000000,     0.000000,     1.000000 ];
+        Pose = [      1.000000,    -0.000000,    -0.000000,     0.000000 ;
+     -0.000000,     1.000000,     0.000000,  -110.000000 ;
+     -0.000000,     0.000000,     1.000000,    35.000000 ;
+      0.000000,     0.000000,     0.000000,     1.000000 ];
     end
     SMR.setParentStatic(tracker)
     posture = SMR.Pose();
