@@ -1,4 +1,4 @@
-function A = A_tilde_matrix(twist,eta_matrix,P,theta)
+function A = A_tilde_matrix(twist,eta_matrix,P,theta,num_of_ball)
 
 [T,~,T_link_abs] = FK(twist,theta);                 % calculate FK to get T_abs and T
 % get Q1
@@ -8,7 +8,7 @@ ad_Adg = [hat(temp(4:6)),hat(temp(1:3));                % ad(Adexp)
     zeros(3)    ,hat(temp(4:6))]*int_Adjoint(eta_matrix(:,1));
 Q_tilde_i = -[eye(3) -hat(P(1:3))]*Q_i*ad_Adg;   % Q1_tilde_i
 
-A = zeros(3,39);
+A = zeros(3,45);
 A(:,1:6) = Q_tilde_i;
 % get the rest of Qi
 for i=2:6
@@ -20,4 +20,4 @@ for i=2:6
     A(:,6*i-5:6*i) = Q_tilde_i;
 end
 Rf = T(1:3,1:3);
-A(:,37:39) = Rf;
+A(:,37+3*num_of_ball:39+3*num_of_ball) = Rf;
