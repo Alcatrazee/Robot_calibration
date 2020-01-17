@@ -173,17 +173,17 @@ norm(deviation(1:3,:))
 %% some useful functions
 % get reference frame using 3 SMRs
 function posture = Get_ref(RDK,tracker,robot_base)
-    Ref1 = RDK.Item('Ref1');
+    Ref1 = RDK.Item('cRef1');
     Ref1.setParentStatic(tracker)
     posture1 = Ref1.Pose();
     Ref1.setParentStatic(robot_base);
     
-    Ref2 = RDK.Item('Ref2');
+    Ref2 = RDK.Item('cRef2');
     Ref2.setParentStatic(tracker)
     posture2 = Ref2.Pose();
     Ref2.setParentStatic(robot_base);
     
-    Ref3 = RDK.Item('Ref3');
+    Ref3 = RDK.Item('cRef3');
     Ref3.setParentStatic(tracker)
     posture3 = Ref3.Pose();
     Ref3.setParentStatic(robot_base);
