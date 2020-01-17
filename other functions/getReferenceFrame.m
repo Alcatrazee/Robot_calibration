@@ -7,9 +7,6 @@ function T = getReferenceFrame(positions,method)
 % for method 1, point 1 is the origin of the frame, point 2 is on Y axis,
 % point is near X axis.
 if method==1
-%     origin = [2042.704860 -427.044627 449.340352]';
-%     Y_point = [2219.209567  -565.188084  449.340352]';
-%     X_point = [1958.919  -219.157  449.340]';
     origin = positions(1:3,1);
     Y_point = positions(1:3,2);
     X_point = positions(1:3,3);
@@ -17,7 +14,7 @@ if method==1
     
     X = (origin-X_point)/norm(origin-X_point);
     Y_wave = (Y_point - origin)/norm(Y_point - origin);
-    Y = Y_wave - abs(Y_wave'*X)*X;
+    Y = Y_wave - Y_wave'*X*X;
     Z = cross(X,Y);
     
     T = [X Y Z origin;0 0 0 1];

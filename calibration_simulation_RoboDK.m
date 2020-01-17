@@ -113,15 +113,16 @@ while j<1000
     j=j+1;                                                                  % counter plus 1
     norm_d_eta = [norm_d_eta norm(d_eta)];
     norm_dpc = [norm_dpc norm(dPc_matrix)];
+    disp 'norm of d_eta'
     disp (norm(d_eta))                                                      % show value of norm of dp
     disp (j)                                                                % show number of iteration
-    if norm(d_eta) < 1e-11                                                   % quit the for loop if deviation is less than 1e-5
-        break;
-    end
-    %% plot
+    % plot
     clf;                                                                    % clear plot
     draw_manipulator_points(twist_matrix_n,[P_c0_n_1,P_c0_n_2,P_c0_n_3],'b');                     % draw nominal axis
     drawnow;
+    if norm(d_eta) < 1e-11                                                   % quit the for loop if deviation is less than 1e-5
+        break;
+    end
 end
 %% plot again
 fig2 = figure(2);                                                           % create another window
@@ -133,7 +134,6 @@ fig3 = figure(3);
 bar3(norm_dpc);
 view(-60,20) 
 legend('||dPc||')
-
 %% verify the new twist
 num_of_test_points = 50;
 test_angles = GetRandomAngles(num_of_test_points);                          % generate new points

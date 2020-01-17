@@ -47,22 +47,22 @@ w_vec_0 = [0 0 1;
 %% g_st0 calculation(or M matrix from Park's paper)
 HomePosition = [0 0 90 0 0 0]';
 robot.MoveJ(HomePosition);
-% Pc0_1_in_tracker = get_SMR_pos(1);
-% Pc0_2_in_tracker = get_SMR_pos(2);
-% Pc0_3_in_tracker = get_SMR_pos(3);
-% P_c0_n_1 = T_tracker_ref\[Pc0_1_in_tracker;1];                                     % represents in reference frame
-% P_c0_n_2 = T_tracker_ref\[Pc0_2_in_tracker;1];
-% P_c0_n_3 = T_tracker_ref\[Pc0_3_in_tracker;1];                                  % represents in reference frame                        
-P_c0_n_1 = [-124,333,951 1]';
-P_c0_n_2 = [-124,513,841 1]';
-P_c0_n_3 = [-124,293,841 1]';
+Pc0_1_in_tracker = get_SMR_pos(1);
+Pc0_2_in_tracker = get_SMR_pos(2);
+Pc0_3_in_tracker = get_SMR_pos(3);
+P_c0_n_1 = T_tracker_ref\[Pc0_1_in_tracker;1];                                     % represents in reference frame
+P_c0_n_2 = T_tracker_ref\[Pc0_2_in_tracker;1];
+P_c0_n_3 = T_tracker_ref\[Pc0_3_in_tracker;1];                                  % represents in reference frame                        
+% P_c0_n_1 = [-124,333,951 1]';
+% P_c0_n_2 = [-124,513,841 1]';
+% P_c0_n_3 = [-124,293,841 1]';
 
 %% norminal twist_matrix_0; size = 6 x 7
 twist_matrix_n = [cross(q_vec_0,w_vec_0);w_vec_0];               % nominal twist
 twist_matrix_copy = twist_matrix_n;
 
 %% read SMR positions and joint angles from files
-num_of_pts = 33;
+num_of_pts = 50;
 theta_random_vec = GetRandomAngles(num_of_pts);
 % theta_random_vec = importdata('test_angles.txt');
 theta_random_vec_deg = rad2deg(theta_random_vec);                  
