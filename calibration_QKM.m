@@ -1,23 +1,30 @@
+%% brief of this program
+% This program is for calibration simulation of robot arm QKM HL6 with
+% RoboDK. This program can calibrate the robot automatically, with randomly
+% generated joint angles, this program can reduce the composition to less
+% than 1e-10.
+% How to use it: run
+% then run this script.
+
 %% close all unecessary windows
 close all
 clear;
 clc
- 
+
 %% referenrce frame establisment
-SMR_poses = importdata('ref.txt');
-T_tracker_ref = getReferenceFrame([SMR_poses(1,:);SMR_poses(2,:);SMR_poses(3,:)]',1);
+T_tracker_ref =  getReferenceFrame(importdata('re_ref.txt')',1);
 
 %% parameters decleration
 % norminal length of links
 length_of_links = [491 350 350 84];                              
 
 % norminal q 
-q_vec_0 = [ -590 410 300;                         
-            -590 410 length_of_links(1);
-            -590 410 length_of_links(1)+length_of_links(2);
-           length_of_links(3)-590 410 length_of_links(1)+length_of_links(2);
-           length_of_links(3)-590 410 length_of_links(1)+length_of_links(2);
-           length_of_links(3)-590 410 length_of_links(1)+length_of_links(2)]';
+q_vec_0 = [ -600 400 300;                         
+            -600 400 length_of_links(1);
+            -600 400 length_of_links(1)+length_of_links(2);
+           length_of_links(3)-600 400 length_of_links(1)+length_of_links(2);
+           length_of_links(3)-600 400 length_of_links(1)+length_of_links(2);
+           length_of_links(3)-600 400 length_of_links(1)+length_of_links(2)]';
 
 % norminal w
 w_vec_0 = [0 0 1;
@@ -26,128 +33,142 @@ w_vec_0 = [0 0 1;
            1 0 0;
            0 1 0;
            1 0 0]';
-%% g_st0 calculation(or M matrix from Park's paper)
-SMR_initial_file_name = 'init_SMRs.txt';
-angles_initial_file_name = 'init_ang.txt';
-[g_st0,~] = retrive_data(SMR_initial_file_name,angles_initial_file_name);   % read initial EE posture
-g_st0_in_tracker = g_st0;
-g_st0 = T_tracker_ref\g_st0;                                                % represents in reference frame
-
-% calculate log(g_st0)
-theta_M = norm(log_my(g_st0));
-normed_M = log_my(g_st0)/theta_M;       
-normed_M(1:3) = normed_M(1:3) - normed_M(1:3)'*normed_M(4:6)*normed_M(4:6);
-
-%% norminal twist_matrix_0; size = 6 x 7
-% twist_iden = get_twist_from_rotations();
-% twist_matrix_0 = [twist_iden normed_M];
-twist_matrix_0 = [[cross(q_vec_0,w_vec_0);w_vec_0],normed_M];               % nominal twist
-twist_matrix_copy = twist_matrix_0;
+    
+% norminal twist_matrix_0; size = 6 x 6
+twist_matrix_n = [cross(q_vec_0,w_vec_0);w_vec_0];               % nominal twist definition
+twist_matrix_copy = twist_matrix_n;
+          
+%% initial  calculation
+HomePosition_offset = [0 0 90 0 0 0]';
+PC0 = importdata('re_smr.txt');
+P_c0_n_1 = T_tracker_ref\[PC0(1,:)';1];                                     % frame transfermation
+P_c0_n_2 = T_tracker_ref\[PC0(2,:)';1];
+P_c0_n_3 = T_tracker_ref\[PC0(3,:)';1];                                                                  
+% P_c0_n_1 = [-130,411,940 1]';
+% P_c0_n_2 = [-130,513,841 1]';
+% P_c0_n_3 = [-130,293,841 1]';
 
 %% read SMR positions and joint angles from files
-data_file_name = 'POSES.txt';
-angle_file_name = 'AnglesInDeg.txt';
-[samples,theta_random_vec] = retrive_data(data_file_name,angle_file_name);  % read and process into postures of end effector
-theta_random_vec = deg2rad(theta_random_vec);
-num_of_pts = length(theta_random_vec);  
-theta_random_vec(:,7) = ones(num_of_pts,1)*theta_M;                         % the 7th column shall be set to thetaM
-theta_random_vec(:,3) = theta_random_vec(:,3) - ones(num_of_pts,1)*pi/2;
+theta_random_vec_deg = importdata('c_angles.txt');                          % import angle data from file
+num_of_pts = length(theta_random_vec_deg);                                  % get number of points 
+theta_random_vec = deg2rad(theta_random_vec_deg(:,1:6));                    % translate unit
+samples = [importdata('c_poses.txt') ones(num_of_pts,1)]';                  % import measured data
+theta_random_vec(:,3) = theta_random_vec(:,3) - ones(num_of_pts,1)*pi/2;    % offset correction
 
-% transfor SMR position into reference frame.
+% transform SMR postures to reference frame.
 for i=1:num_of_pts
-    samples(:,:,i) = T_tracker_ref\samples(:,:,i);
+    samples(:,i) = T_tracker_ref\samples(:,i);                              % coordinate transformation
 end
 
 %% variables declaration
-df_f_inv = zeros(num_of_pts*6,1);                                           % df*f^-1
-dp = zeros(num_of_pts*6,1);                                                 % deviation of configuration parameters
-A = zeros(num_of_pts*6,42);                                                 % A matrix
-j = 0;                                                                      % iteration time
-norm_dp=[];                                                                 % for norm of dp visialization
-Jacobian = zeros(6,6);
+j = 0;                                              % iteration counter
+eta_matrix = zeros(6,6);                            
+d_eta = zeros(45,1);
+dPc = zeros(3*num_of_pts,1);
+A_tilde = zeros(3*num_of_pts,45);
+norm_d_eta = [];
+norm_dpc = [];
+dPc_matrix = zeros(3,num_of_pts);
+
 %% parameters identification and composition
-while j<20
-    %% calculate A matrix and df*f^-1 (parameters identification)
+while j<1000
+    %% calculate A_tilde matrix and dPc (parameters identification)
     for i=1:num_of_pts                                                      % repeat num_of_pts times
-        [T_n,~,T_n_abs] = FK_new(twist_matrix_0,theta_random_vec(i,:));           % Tn calculation
-        T_a = samples(:,:,i);                                               % in this case,we have ee postures represent in reference frame
-        A(1+i*6-6:i*6,:) = A_matrix(twist_matrix_0,theta_random_vec(i,:));  % A matrix calculation
-        df_f_inv(1+i*6-6:i*6) = log_my(T_a/T_n);                            % solve for log(df_f_inv)
-%         for k = 1:6
-%             Jacobian(:,k) = vee(T_n_abs(:,:,k)*hat(twist_matrix_0(:,k)));
-%         end
-%         det(Jacobian)
+        [Tn,~,~] = FK(twist_matrix_n,theta_random_vec(i,:));                % Tn calculation                                                         
+        num_of_ball = theta_random_vec_deg(i,7);                            % index of SMR to be detected
+        if(num_of_ball==1)
+            P_n = Tn * P_c0_n_1;
+        elseif(num_of_ball==2)
+            P_n = Tn * P_c0_n_2;
+        else
+            P_n = Tn * P_c0_n_3;
+        end
+        P_a = samples(:,i);                                                 % actual SMR position
+        dpc = P_a - P_n                                                     % deviation of actual position and norminal position
+        norm(dpc)                                                           % calculate norm of dpc
+        dPc(i*3-2:i*3) = dpc(1:3);                                          % 
+        dPc_matrix(:,i) = dpc(1:3);
+        A_tilde(i*3-2:i*3,:) = A_tilde_matrix(twist_matrix_n,eta_matrix,P_n,theta_random_vec(i,:),num_of_ball-1);  % A matrix calculation
     end
-    
-    condition_number = norm(A)*norm(pinv(A))
-    dp = A\df_f_inv;                                                        % solve for dp(derive of twist)
+    d_eta = A_tilde\dPc;                                                    % solve for dp(derive of twist)
+    %% calculate observibility index 
+    [cols,rows] = size(A_tilde);
+    [U,S,V] = svd(A_tilde);
+    V = V';
+    singular_value_mul = 1;
+    for i=1:rank(A_tilde)
+        singular_value_mul = singular_value_mul*S(i,i);
+    end
+    observibility_index = singular_value_mul^(1/rows)/sqrt(num_of_pts)       
     %% composition
     for i=1:6
-        twist_matrix_0(:,i) = twist_matrix_0(:,i) + dp(1+i*6-6:i*6,1);                                                          % composition
-        twist_matrix_0(:,i) = twist_matrix_0(:,i)/norm(twist_matrix_0(4:6,i));                                                  % normalization
-        twist_matrix_0(1:3,i) = twist_matrix_0(1:3,i) - twist_matrix_0(1:3,i)'*twist_matrix_0(4:6,i)*twist_matrix_0(4:6,i);     % make v perpendicular to w
+        eta_matrix(:,i) = eta_matrix(:,i)+d_eta(i*6-5:i*6);
+        twist_matrix_n(:,i) = Adjoint(T_matrix(eta_matrix(:,i)))*twist_matrix_copy(:,i);
     end
-    twist_matrix_0(:,7) = twist_matrix_0(:,7)+dp(37:42,1);                  % alternate the last rows
+    P_c0_n_1 = [P_c0_n_1(1:3) + d_eta(37:39);1];                            % composite smr positions in initial configuration
+    P_c0_n_2 = [P_c0_n_2(1:3) + d_eta(40:42);1];
+    P_c0_n_3 = [P_c0_n_3(1:3) + d_eta(43:45);1];
     %% data prepration of visialization
-    j=j+1;                                                                  % counter plus 1 
-    norm_dp = [norm_dp norm(dp)];                                           % minimization target value calculation
-    disp (norm(dp))                                                         % show value of norm of dp
+    j=j+1;                                                                  % counter plus 1
+    norm_d_eta = [norm_d_eta norm(d_eta)];                                  % calculate d_eta and push back to a array
+    norm_dpc = [norm_dpc norm(dPc_matrix)];                                 % calculate norm of deviation of positions
+    disp 'norm of dPc'
+    disp (norm_dpc(j))                                                      % display deviation of norminal and actual position of a SMR
+    disp 'norm of d_eta'
+    disp (norm(d_eta))                                                      % show value of norm of d_eta
     disp (j)                                                                % show number of iteration
-    if norm(dp) < 0.00009                                                   % quit the for loop if deviation is less than 1e-5
+    % plot
+    clf;                                                                    % clear plot
+    draw_manipulator_points(twist_matrix_n,[P_c0_n_1,P_c0_n_2,P_c0_n_3],'b');                     % draw nominal axis
+    drawnow;
+    if norm(d_eta) < 1e-10                                                  % quit the for loop if deviation is less than 1e-5
         break;
     end
-    %% plot
-    clf;                                                                    % clear plot
-    draw_manipulator_my(twist_matrix_0,theta_M,'b');                        % draw nominal axis
-    drawnow;
 end
 %% plot again
 fig2 = figure(2);                                                           % create another window
-bar3(norm_dp)                                                               % plot discrete data
+bar3(norm_d_eta)                                                            % plot discrete data
+view(-60,20)                                                                % adjust cam 
+legend('||d¦Ç||')
 
+fig3 = figure(3);
+bar3(norm_dpc);
+view(-60,20) 
+legend('||dPc||')                                                           % plot discrete data
 %% verify the new twist
-% read SMR poses and joint angles from file
-data_file_name = 'POSES.txt';
-angle_file_name = 'AnglesInDeg.txt';
-[test_poses,test_angles] = retrive_data(data_file_name,angle_file_name);     % get postures and joint angles from file
-angle_matrix_size = size(test_angles);
-num_of_test_points = angle_matrix_size(1);
-test_angles = [deg2rad(test_angles) ones(angle_matrix_size(1),1)*theta_M];                     
-test_angles(:,3) = test_angles(:,3)  - ones(num_of_test_points,1)*pi/2;
+ball_index = 7;
+test_angles_deg = importdata('test_points.txt');
+num_of_test_points = length(test_angles_deg);
+test_angles = deg2rad(test_angles_deg);                                     % you know what it is
+truth_positions = [importdata('re_test.txt') ones(num_of_test_points,1)]';
+test_angles(:,3) = test_angles(:,3) - ones(num_of_test_points,1)*pi/2;      % for FK calculation
+
+for i=1:num_of_test_points
+    truth_positions(:,i) = T_tracker_ref\truth_positions(:,i);
+end
+
 % variables decleration
-truth_poses = zeros(4,4,num_of_test_points);
-estimated_poses = zeros(4,4,num_of_test_points);
-deviation = zeros(4,4,num_of_test_points);                                  % quotient of measured value and estimated value
-delta_eps = zeros(6,num_of_test_points);
-norm_delta_eps = delta_eps;
+estimated = zeros(4,num_of_test_points);
+deviation = zeros(4,num_of_test_points);                                  % quotient of measured value and estimated value
 delta_theta = zeros(1,num_of_test_points);
-dis_deviation_sum = 0;
 
 % start testing
 for i=1:num_of_test_points
-    truth_poses(:,:,i) = T_tracker_ref\test_poses(:,:,i);                   % transform reference frame
-%     iden_poses(:,:,i) = FK_new(twist_iden,test_angles(i,:));
-    [estimated_poses(:,:,i),~,~] = FK_new(twist_matrix_0,test_angles(i,:)); % estimate poses of EE with the same angles
-    deviation(:,:,i) = truth_poses(:,:,i)/estimated_poses(:,:,i);           % calculate deviation of two poses
-%     deviation_iden(:,:,i) = truth_poses(:,:,i)/iden_poses(:,:,i);
-    
-    dis_deviation_sum = dis_deviation_sum + norm(deviation(1:3,4,i));
-    delta_eps(:,i) = log_my(deviation(:,:,i));   % norm of deviation of gesture
-    delta_theta(i) = norm(delta_eps(:,i));
-    norm_delta_eps(:,i) = delta_eps(:,i)/norm(delta_eps(:,i));
+    [estimated,~,~] = FK(twist_matrix_n,test_angles(i,:)); % estimate poses of EE with the same angles
+    num_of_ball = test_angles_deg(i,ball_index);
+%     num_of_ball = mod(i,3)+1;
+    if(num_of_ball==1)
+        Pc_n = estimated * P_c0_n_1;
+    elseif(num_of_ball==2)
+        Pc_n = estimated * P_c0_n_2;
+    else
+        Pc_n = estimated * P_c0_n_3;
+    end
+    Pc_a = truth_positions(:,i);
+    deviation(:,i) = Pc_a - Pc_n;           % calculate deviation of two poses
 end
-disp 'average delta theta (rad)'
-norm(delta_theta)
-disp 'average omega (mm)'
-norm(norm_delta_eps(4:6,:))
-view(-60,20)
-q_origin = zeros(3,6);
-q_after = zeros(3,6);
-for i = 1:6
-    q_after(:,i) = cross(twist_matrix_0(4:6,i),twist_matrix_0(1:3,i));
-    q_origin(:,i) = cross(twist_matrix_copy(4:6,i),twist_matrix_copy(1:3,i));
-end
-disp 'average position error'
-dis_deviation_sum/num_of_test_points
-
-
+disp 'norm of distance deviation:'
+norm(deviation(1:3,:))
+disp 'mean of deviation'
+mean(mean(deviation(1:3,:)))
+[P_c0_n_1 P_c0_n_2 P_c0_n_3]

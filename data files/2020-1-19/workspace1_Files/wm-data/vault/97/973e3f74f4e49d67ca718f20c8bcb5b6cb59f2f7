@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<PWObjectRevision gid="5797a159-f4ab-4861-88b5-c075a196fbe7" type="IMInspect Project" Name="Inspector项目" revisionStatus="CommittedRevision">
+  <Location>imi\0</Location>
+  <ModuleData>
+    <SavedVersions>19.02.01.3099</SavedVersions>
+    <ActivePieceId>07dfa0b6-c0be-4988-ae58-4738c1902b7f</ActivePieceId>
+  </ModuleData>
+  <DependOnObjectG dependencyId="d304e328-1bf3-4eeb-9de7-aa369e42501c">07dfa0b6-c0be-4988-ae58-4738c1902b7f</DependOnObjectG>
+  <CreationDateUTC>20200119T100305.327886</CreationDateUTC>
+  <VaultMap>
+    <VaultItem id="part_model" hash="cc194ddc94144e857aeadae866eac13b53296792"/>
+    <VaultItem id="surface_data_spc_model" hash="eed84d0d3be10840898c5c3dbe598a338598ea3b"/>
+  </VaultMap>
+</PWObjectRevision>

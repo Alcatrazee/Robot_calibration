@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<PolyworksWorkspace gid="282f86d8-1fa8-4251-b5c7-9398d53bc6f6" buildNumber="3099" polyworksVersion="19.2.1" version="2.0" saveId="68deb54e-0dfe-407c-8381-f700072ad4bd">
+  <DataLocation xml:space="preserve">workspace1_Files\wm-data</DataLocation>
+  <LastKnownLocation xml:space="preserve">D:\2020-1-19</LastKnownLocation>
+  <Name xml:space="preserve">workspace1</Name>
+  <SavedVersions>19.02.01.3099</SavedVersions>
+  <CreationDateUTC>20200119T100258.545794</CreationDateUTC>
+  <ModificationDateUTC>20200119T100307.111627</ModificationDateUTC>
+  <PWObject gid="5797a159-f4ab-4861-88b5-c075a196fbe7" type="IMInspect Project">
+    <Name>Inspector项目</Name>
+    <CreationDateUTC>20200119T100304.172654</CreationDateUTC>
+    <VaultMap>
+      <VaultItem id="CommittedRevision" hash="973e3f74f4e49d67ca718f20c8bcb5b6cb59f2f7"/>
+    </VaultMap>
+  </PWObject>
+  <PWObject gid="07dfa0b6-c0be-4988-ae58-4738c1902b7f" type="IMInspect Piece" isEndUser="no">
+    <Name>Inspector项目 - 工件 1</Name>
+    <CreationDateUTC>20200119T100304.322574</CreationDateUTC>
+    <VaultMap>
+      <VaultItem id="CommittedRevision" hash="a3165c7980123c62e74b5ba5a87827065c0eec57"/>
+    </VaultMap>
+  </PWObject>
+  <PWObject gid="5e11e942-0e93-492f-b9d2-815062421281" type="Device" isEndUser="no">
+    <Name>92E44EB2-C5CE-4B79-95EF-CDF7639BDE07</Name>
+    <CreationDateUTC>20200119T100306.931715</CreationDateUTC>
+    <VaultMap>
+      <VaultItem id="CommittedRevision" hash="1a66489bbeed707187741e4576d1c70125d335d9"/>
+    </VaultMap>
+  </PWObject>
+  <Links/>
+</PolyworksWorkspace>

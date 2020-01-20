@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<PWObjectRevision gid="07dfa0b6-c0be-4988-ae58-4738c1902b7f" type="IMInspect Piece" Name="Inspector项目 - 工件 1" revisionStatus="CommittedRevision" isEndUser="no">
+  <Location>imi\1</Location>
+  <ModuleData>
+    <SavedVersions>19.02.01.3099</SavedVersions>
+  </ModuleData>
+  <CreationDateUTC>20200119T100305.327886</CreationDateUTC>
+  <VaultMap>
+    <VaultItem id="data_3d2cb681-fbe7-46c9-a36b-a0d9fe2c4817" hash="d6bc3c9c72a993a6e18b770ac628d4277cc49b12"/>
+    <VaultItem id="info" hash="d408684669fb3650adcc1665dd60020cbf4b42b0"/>
+    <VaultItem id="omdl_604f656a-1dd2-4e4d-a51c-2fa7fb6dde24" hash="d96fdf0c679796685963fb2be5d9f886b3a37d0d"/>
+    <VaultItem id="omdl_a60144af-7cb2-41eb-a9a2-959c1970e917" hash="b4ac1e8e9bc077d7c56e4db8f9823e1906ceed47"/>
+    <VaultItem id="piece_header_model" hash="ba6c7b2c129b602106639c53a2066fd6f499b4cf"/>
+    <VaultItem id="piece_model" hash="013ba99ed6f0ec152908e9f1e1999bb3c6541b5f"/>
+    <VaultItem id="report_items" hash="7f2cadde6b34e946c49c500f9780f0c39cac5fd3"/>
+    <VaultItem id="settings_archive" hash="f0954042e0a6eccdbf47ff9bc2de2cb5aec7ca0d"/>
+    <VaultItem id="snapshot" hash="e6c29d38aefd62afcc9fe5b4e5c2721936c342cb"/>
+  </VaultMap>
+</PWObjectRevision>

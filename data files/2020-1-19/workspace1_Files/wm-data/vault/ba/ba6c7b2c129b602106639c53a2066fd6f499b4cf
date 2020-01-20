@@ -1,0 +1,2247 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ObjectModel version="11.0">
+<VersionHistory>
+<Version name="iminspect" software="19.02.01.3099" schema="15.10" model="11.0"/>
+</VersionHistory>
+<Schema name="IMInspect" version="15.10">
+<Definition>
+<PropertyTypes>
+<PropertyType id="CatID" version="2.0"/>
+<PropertyType id="Cone" version="1.1"/>
+<PropertyType id="DataCmp" version="7.0"/>
+<PropertyType id="Deviation" version="1.1"/>
+<PropertyType id="DimensionIdentifier" version="5.0"/>
+<PropertyType id="FCFDrawingParameters" version="7.0"/>
+<PropertyType id="GaugeResultDouble" version="2.0"/>
+<PropertyType id="MxdStr" version="2.0"/>
+<PropertyType id="ObjInfo" version="2.0"/>
+<PropertyType id="OrientationAngles" version="3.0"/>
+<PropertyType id="OutOfTol" version="1.1"/>
+<PropertyType id="PercTol" version="1.1"/>
+<PropertyType id="SPCTrendChartData" version="2.0"/>
+<PropertyType id="Stream" version="2.0"/>
+<PropertyType id="SurfCmp" version="3.1"/>
+<PropertyType id="Tol" version="2.0"/>
+<PropertyType id="ToleranceZone" version="3.0"/>
+<PropertyType id="TwoPointSizeResult" version="2.0"/>
+<PropertyType id="ValueVariant" version="2.0"/>
+<PropertyType id="VectDataVarPt" version="1.1"/>
+<PropertyType id="VectorProbedPointInfo" version="1.1"/>
+</PropertyTypes>
+</Definition>
+<Model>
+<Objects nb="225">
+<O id="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" clsid="Piece">
+<P id="CreationDateTime">20200119T150156</P>
+<P id="ApprovalStatus">Undefined</P>
+<P id="SerNum"/>
+<P id="TemplateCreationDT"/>
+<P id="Device"/>
+<P id="OrderNumber"/>
+<P id="Name">工件 1</P>
+<P id="EMail"/>
+<P id="Operator"/>
+<P id="WorkspaceDependencyId">d304e328-1bf3-4eeb-9de7-aa369e42501c</P>
+<P id="TemplateDateTime"/>
+<P id="TemplateLastModif"/>
+<P id="TemplatePieceName"/>
+<P id="Deleted">0</P>
+<P id="UsedSPC">1</P>
+<P id="IsTemplate">0</P>
+<P id="ParentTemplateID">00000000-0000-0000-0000-000000000000</P>
+<P id="PiecePartCustomProperties">0</P>
+</O>
+<O id="f7c86028-ac20-4f41-87d1-7dc27e79228e" clsid="SPCObj2">
+<P id="Name">ref_1</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="85dbbdd5-0a7e-42b4-9af4-2aa241491e67" clsid="SPCObj2">
+<P id="Name">ref_2</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="763efcfa-7463-42a2-a448-eb2f9c6689fc" clsid="SPCObj2">
+<P id="Name">ref_3</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="9f69c8c6-3fb8-4344-bcd0-1074f7384c93" clsid="SPCObj2">
+<P id="Name">smr_init_1</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="45a3b851-131b-42a4-861a-7167b753f9f9" clsid="SPCObj2">
+<P id="Name">smr_init_2</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="95796b77-17ce-4ed9-9a12-eb13eaa8928e" clsid="SPCObj2">
+<P id="Name">smr_init_3</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="8cbb888c-46a6-4849-a716-6ee9cec44a97" clsid="SPCObj2">
+<P id="Name">pos1</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="44d4a82d-cc91-4461-8609-648cdee6d5cc" clsid="SPCObj2">
+<P id="Name">pos2</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="d699d746-28d9-4d11-972e-956cf729426a" clsid="SPCObj2">
+<P id="Name">pos3</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="c73ec0e8-7bd4-4ca4-b9c9-87165d62fb9d" clsid="SPCObj2">
+<P id="Name">pos4</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="5ddb10d6-6c25-4b18-b4f2-4ca1c78ac2a7" clsid="SPCObj2">
+<P id="Name">pos5</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="25754bbe-3939-4cb2-be70-64fa58339d76" clsid="SPCObj2">
+<P id="Name">pos6</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="a9200b16-81f0-4d98-966e-feff6808c83a" clsid="SPCObj2">
+<P id="Name">pos7</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="87527450-430a-4a89-af82-ad57245d9aac" clsid="SPCObj2">
+<P id="Name">pos8</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="bdcd7b4b-abc7-41db-8538-24b6a7ef4fa9" clsid="SPCObj2">
+<P id="Name">pos9</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="a29071b6-700f-4afa-86b9-45644482ac63" clsid="SPCObj2">
+<P id="Name">pos10</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="4ff0a863-ace1-4f36-b7af-246a4a15c42c" clsid="SPCObj2">
+<P id="Name">pos11</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="cd152e25-aaae-49ff-a541-9c49537235aa" clsid="SPCObj2">
+<P id="Name">pos12</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="5acc5f3c-c0ae-410c-b499-c799ed858493" clsid="SPCObj2">
+<P id="Name">pos13</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="b5b7d95f-dfe9-49f5-8396-cb744052d8c2" clsid="SPCObj2">
+<P id="Name">pos14</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="7b87c6f4-acc4-488d-9e51-b7d3bb1a7749" clsid="SPCObj2">
+<P id="Name">pos15</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="8ed4b785-0dde-4457-8f68-d691b094f4cd" clsid="SPCObj2">
+<P id="Name">pos16</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="0cc182f8-e47a-49ce-839e-54fc139d380a" clsid="SPCObj2">
+<P id="Name">pos17</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="bc0fdbee-4ddd-4469-9907-1e120fc2e4d0" clsid="SPCObj2">
+<P id="Name">pos18</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="63d10873-fa72-422b-b84c-8afb68606f90" clsid="SPCObj2">
+<P id="Name">pos19</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="b0517bdc-6295-456a-ba30-e904bcde7c9b" clsid="SPCObj2">
+<P id="Name">pos20</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="61c5155a-cca6-42a5-a737-db358cb30a97" clsid="SPCObj2">
+<P id="Name">pos21</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="b191a83a-2281-4d89-a359-29e1975f3fb6" clsid="SPCObj2">
+<P id="Name">pos22</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="63d7f5cf-401c-487d-a934-9793f7cf7b44" clsid="SPCObj2">
+<P id="Name">pos23</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="32ab698a-180b-4a20-8bdc-bbe3401dcd84" clsid="SPCObj2">
+<P id="Name">pos24</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="ed8da403-239c-46d4-a17c-247da5fb6f3f" clsid="SPCObj2">
+<P id="Name">pos25</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="7d302279-09f6-4a19-821a-8225972f3d24" clsid="SPCObj2">
+<P id="Name">pos26</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="ea33d0a9-93a2-49ef-9383-d1487981b950" clsid="SPCObj2">
+<P id="Name">pos27</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="eaf724e7-dfea-4393-9299-8833c20aec96" clsid="SPCObj2">
+<P id="Name">pos28</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="fd38766a-587a-465b-a13c-d3fb28721cc4" clsid="SPCObj2">
+<P id="Name">pos29</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="c44fcc92-15fb-403b-b80d-3862afb07843" clsid="SPCObj2">
+<P id="Name">pos30</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="5d124b83-d0a7-461f-a253-8aaa1300e5cf" clsid="SPCObj2">
+<P id="Name">pos31</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="e6749956-6e8f-4b5e-95d8-410e1c567cf9" clsid="SPCObj2">
+<P id="Name">pos32</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="0ccc1e84-a947-439c-a718-bf77b0843980" clsid="SPCObj2">
+<P id="Name">pos33</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="1c035f2b-a6d2-47c9-87f1-5d180fa95248" clsid="SPCObj2">
+<P id="Name">pos34</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="f56c52c4-8ace-47d0-b9a2-c8e5e60d35e8" clsid="SPCObj2">
+<P id="Name">pos35</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="bdcc4d14-333e-4c82-9b89-cd4cf7a7ee59" clsid="SPCObj2">
+<P id="Name">pos36</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="256d6fd5-badf-40b5-9470-e4653cc15518" clsid="SPCObj2">
+<P id="Name">pos37</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="9f106ccd-a1cb-40d2-ab98-765133ec6a42" clsid="SPCObj2">
+<P id="Name">pos38</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="3db153e6-b8b1-46a8-b510-8e64eb593d4a" clsid="SPCObj2">
+<P id="Name">pos39</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="ea4e587f-4c82-49ee-9828-c28120d6845a" clsid="SPCObj2">
+<P id="Name">pos40</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="1870a4d0-df24-4814-ab58-8c0ffbad0157" clsid="SPCObj2">
+<P id="Name">pos41</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="95cf4cb5-50e5-478a-b157-b8d5ca3cf6d2" clsid="SPCObj2">
+<P id="Name">pos42</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="7f7f68b3-5af2-4bd6-9381-47a008a7d1d2" clsid="SPCObj2">
+<P id="Name">pos43</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="2a7559f9-6cb4-474b-a75f-af4348507489" clsid="SPCObj2">
+<P id="Name">pos44</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="df368f93-dbb3-4957-98bc-bab51414bcb1" clsid="SPCObj2">
+<P id="Name">pos45</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="61871fbd-8f17-462d-9229-0d345ab0a65f" clsid="SPCObj2">
+<P id="Name">pos46</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="71a69e59-3428-4776-8441-184aeb19a9ff" clsid="SPCObj2">
+<P id="Name">pos47</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="e841afbb-86c4-472c-a217-15161f32ea34" clsid="SPCObj2">
+<P id="Name">pos48</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="112755a9-2fb1-4042-92e6-9f6d24997e4a" clsid="SPCObj2">
+<P id="Name">pos49</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="49dd317c-9285-4d58-9737-629f2cfa74ae" clsid="SPCObj2">
+<P id="Name">pos50</P>
+<P id="ClsId">FtrSinglePoint</P>
+<P id="AnnTmpl" null="1"/>
+</O>
+<O id="52ee63fd-b944-4e8b-8248-6e6e5a226f17" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AB5553A0000000</P>
+</O>
+<O id="bc1daa74-d4f1-41e9-aac8-01b931d168a1" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4083A1D480000000</P>
+</O>
+<O id="df456f31-4f16-48f1-b768-7fc39ea1ee89" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C08355C400000000</P>
+</O>
+<O id="d4a15089-6a0c-4550-b023-abcd9e2c9543" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40ACBFA4E0000000</P>
+</O>
+<O id="2da1d4f1-83f4-44d0-b8b2-9194c5214c3c" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C065730F60000000</P>
+</O>
+<O id="cd1a72c0-84f3-4a9e-9aa8-d2963ae53e43" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C083441400000000</P>
+</O>
+<O id="e2de02fc-5967-4109-a1c7-f958cb28b694" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AE2DAC20000000</P>
+</O>
+<O id="072a3bfe-bb60-462f-90da-3886ae9a7f7f" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">408632AB20000000</P>
+</O>
+<O id="184337c6-d2f2-4a1a-9138-b26668b87268" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C0834AEBC0000000</P>
+</O>
+<O id="cdd0ca0f-472c-45f8-8596-f906898342ef" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AD05C6A0000000</P>
+</O>
+<O id="b80d3eba-fb75-4fdf-b5b7-fe18e7370520" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407020A760000000</P>
+</O>
+<O id="209f90e4-7870-4b8e-8650-c6558c3f4d0b" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4074337960000000</P>
+</O>
+<O id="d20ead9c-a571-4fc6-8456-7dfb2df82bf3" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AD344600000000</P>
+</O>
+<O id="ddb515f4-af29-4db1-bba5-d170dd89d3f1" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40624F30C0000000</P>
+</O>
+<O id="ecad639d-0907-4c3e-9632-ab7c8205e005" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">406A5C3980000000</P>
+</O>
+<O id="741f01fa-7f6a-4a97-9520-c446d6766c7a" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40ACD0AFA0000000</P>
+</O>
+<O id="b29c4f70-67f7-40fc-b4ab-dfd28f349500" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4076F38A20000000</P>
+</O>
+<O id="efdcaea0-ab3f-43a0-adff-15eacafaa023" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">406A273100000000</P>
+</O>
+<O id="5a78aab3-cecd-42d8-b2df-35bbda0cb5d3" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0464120000000</P>
+</O>
+<O id="2ce847ea-86d8-489a-a815-11c9773fac17" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407C008F00000000</P>
+</O>
+<O id="9fceac7a-5e2f-43c4-a875-e8f8d2fc6e0d" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4077D00BE0000000</P>
+</O>
+<O id="2c2e4968-0075-4beb-be5e-cf09001c2a69" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B1364160000000</P>
+</O>
+<O id="34547cf8-2c7c-4dbb-a075-3f390c0b350d" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4083FF39A0000000</P>
+</O>
+<O id="b5bab987-b098-4b07-b1e3-fef91027560b" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407CF55BC0000000</P>
+</O>
+<O id="8688291b-f093-43bb-bc5c-c13567779273" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B00F2F80000000</P>
+</O>
+<O id="88f316d9-58a1-4af4-b3c4-a5f271854a37" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407A070580000000</P>
+</O>
+<O id="e3515d25-90d6-4a62-843b-bc0e7bc55316" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4082E50C80000000</P>
+</O>
+<O id="d3620125-8c39-4fdf-8de5-8d773b094589" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B02937E0000000</P>
+</O>
+<O id="1661dd04-a63e-402c-8b59-0a4abf6dfddc" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">406984D7E0000000</P>
+</O>
+<O id="71f34cfb-26e9-4fbc-9718-0b4c515928cb" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4081D01240000000</P>
+</O>
+<O id="355bac79-8dd3-468d-b6a4-2bbb52784d79" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B170CCC0000000</P>
+</O>
+<O id="b42541f2-92d7-4a82-9180-9b81d83ad754" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4087F70A80000000</P>
+</O>
+<O id="8a47a59f-4fa6-45e5-90ac-001fa425b3a9" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">406F894580000000</P>
+</O>
+<O id="1d30aa52-5bdb-4593-8aeb-6bef6bf41171" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AC9315C0000000</P>
+</O>
+<O id="c6044246-ce4c-4999-9934-43b8d0561372" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4083CFCAC0000000</P>
+</O>
+<O id="76ea71c3-dc8b-4dbd-9ed4-fcc312feaa9e" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C0759675A0000000</P>
+</O>
+<O id="4d6fdc66-3996-43c8-8bb7-5a0e8536008f" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B1956EC0000000</P>
+</O>
+<O id="99c5d40c-2734-439a-8fbf-df791c0f34c7" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C05930B640000000</P>
+</O>
+<O id="ab74570e-d2b0-4e3c-be7d-b0da86aac506" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C07690FA20000000</P>
+</O>
+<O id="905f196d-944c-41a8-bc0f-8f51fdb1315b" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B100CE00000000</P>
+</O>
+<O id="0acad94d-96e8-4265-9ea2-c0bcad7696de" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">403ED9FCE0000000</P>
+</O>
+<O id="85c55974-91f3-41ff-9ac0-f752db9ed4c5" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C064D6ED40000000</P>
+</O>
+<O id="332bb17a-ab92-461f-aa7a-76ea952d2555" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B03E66C0000000</P>
+</O>
+<O id="52d00dbf-b053-4469-872b-213121e41e5b" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40857B5860000000</P>
+</O>
+<O id="61d050af-cac9-4576-a928-241cf7e04079" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40783E9120000000</P>
+</O>
+<O id="19c334d2-0be8-4d7d-af94-9c7e66a9d2aa" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0671C40000000</P>
+</O>
+<O id="242e0367-8ac7-49f1-a83d-8091f59e8502" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">408ACFE080000000</P>
+</O>
+<O id="58194b23-2d0c-4fb0-b028-5ad566c2a228" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">406686C700000000</P>
+</O>
+<O id="a508fe3d-930c-461c-b12f-9128562c2d25" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AF6BDE80000000</P>
+</O>
+<O id="5286cccb-e504-4ab1-89e9-21f8430d9c9f" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40761177A0000000</P>
+</O>
+<O id="275455b5-f20b-4287-8e1c-a01feba46c48" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407EEBDB40000000</P>
+</O>
+<O id="7caeda19-badd-4aa6-bfb8-68f9486b13bd" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AEA38780000000</P>
+</O>
+<O id="1bc7a93f-efed-47db-a227-b08c02f504ca" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40747743E0000000</P>
+</O>
+<O id="6fde2bdf-d101-44b1-9e7e-181a26a0a6c1" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40835A0080000000</P>
+</O>
+<O id="20903aa8-2061-454e-8d3a-b2e01b2d4d09" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B03EE740000000</P>
+</O>
+<O id="f9997c1f-e0aa-49a4-aecc-32be77858333" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4078A56160000000</P>
+</O>
+<O id="e6ca43b9-8848-4eea-981c-183b3ca0ebdd" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407A476FE0000000</P>
+</O>
+<O id="0ae72f34-cba0-42fb-b573-9590a81dee1c" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B1F4CDC0000000</P>
+</O>
+<O id="255b2888-5be0-4935-947f-f2dbe6ae2286" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40423B8160000000</P>
+</O>
+<O id="8fdd14c3-a80d-495e-a560-99d89fd45c5b" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">404A8C0CC0000000</P>
+</O>
+<O id="1392f824-b324-4119-aa0d-b8bfeb03a8e8" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B049B320000000</P>
+</O>
+<O id="5da88ee9-0bf2-4683-a713-1e49c4f6791d" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">408422C4A0000000</P>
+</O>
+<O id="ef3a9a4a-3c9f-4b0a-8ae7-50ff6fc0add9" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407A6D2460000000</P>
+</O>
+<O id="b0bc241c-3243-4da2-8ace-68d9b1c2f42e" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AB38AC00000000</P>
+</O>
+<O id="e39efe42-f2b2-427b-bacf-230d03cfdfa6" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C0274DE560000000</P>
+</O>
+<O id="f7ece7b5-4c4f-4478-87a2-53af0dbda57d" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C065E0AA60000000</P>
+</O>
+<O id="c1db8bf8-5176-474f-abd4-77696c69a5e2" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AEB73920000000</P>
+</O>
+<O id="8271ae65-29d3-448a-9773-a85b88e02470" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">408B9DAD60000000</P>
+</O>
+<O id="2762676e-f4e4-4bcc-bc10-c84679b7631d" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4050DCCDC0000000</P>
+</O>
+<O id="3b6c62c9-76db-4b10-9702-1e3a3cececed" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AB38B380000000</P>
+</O>
+<O id="69a11a7e-ce3c-4feb-a5d5-69d09ee3a603" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407CFA82E0000000</P>
+</O>
+<O id="d9d9a8b9-3dbc-45b1-9a73-a0c1d5384e0c" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C0777EDA40000000</P>
+</O>
+<O id="981c286d-4603-411c-a959-87131f5acf3c" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B08519A0000000</P>
+</O>
+<O id="63793845-c036-43b3-98d8-ffd58521c01b" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40818F7F00000000</P>
+</O>
+<O id="81476b3b-1285-4ae7-9a41-d910ed82be60" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40813060E0000000</P>
+</O>
+<O id="33b8f0c1-0f7f-4b62-86c1-5b767c10df77" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40ADFA8EE0000000</P>
+</O>
+<O id="186fc170-64d2-4a4d-bd92-aa6f211e5bed" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">400810E120000000</P>
+</O>
+<O id="9971b6c0-dcd5-4b04-8981-34224be0b016" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407FAB8F60000000</P>
+</O>
+<O id="002a4458-258a-41f8-9fe4-198d2012c826" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AC5912C0000000</P>
+</O>
+<O id="beb961a7-b5d3-4b18-8e38-bec92c63bc43" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C0440F44E0000000</P>
+</O>
+<O id="6b66c20c-a649-40b1-9ea2-83eab7ccf195" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40775EFA60000000</P>
+</O>
+<O id="fb43af87-d556-41f5-951b-d87e52d7ec37" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AC9C7680000000</P>
+</O>
+<O id="a31f3019-0b82-4d88-a126-c258cf6c8e8d" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4073D1C480000000</P>
+</O>
+<O id="fb524e01-a4fb-4349-8c6d-a7600d830b8a" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C07B9FA380000000</P>
+</O>
+<O id="f35b2351-8d15-4cd7-9a2f-4e19ea5cbc21" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0724280000000</P>
+</O>
+<O id="2ceec4c1-09a9-4901-812a-78d0d57defec" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4089488F00000000</P>
+</O>
+<O id="99030363-c623-4ba8-a78e-61deeb52cfe9" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407BA6E3E0000000</P>
+</O>
+<O id="ca37f787-cd81-4d36-bcb2-de3718e3ba0a" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AFF317A0000000</P>
+</O>
+<O id="7f9cdddc-5f7a-41cd-8598-e31ce8e7e7d6" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4071F82F60000000</P>
+</O>
+<O id="90e9062c-a2ba-4e7e-a80d-c29754762319" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4084A492E0000000</P>
+</O>
+<O id="fdaca112-c432-4735-9e8f-7200affc9e05" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AF23C680000000</P>
+</O>
+<O id="cbeb47d8-5a9c-44dc-866e-dd19811e7d41" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C05A1DFC80000000</P>
+</O>
+<O id="f39a66e2-cbf2-4ce3-96fe-cfe16f57f1c6" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4078A52CC0000000</P>
+</O>
+<O id="a955abe1-e288-48ac-8b5c-e38a6caafe58" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AF2F3660000000</P>
+</O>
+<O id="13d7137c-1d31-4196-8105-03a91af097cd" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">408DF851C0000000</P>
+</O>
+<O id="acf6f397-f330-4515-8f54-bf54bdf560b0" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4067ADE6E0000000</P>
+</O>
+<O id="b35283cd-626a-4743-9aaf-3beadcae8ffa" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AF86B3E0000000</P>
+</O>
+<O id="f15e073f-8772-4c0e-bcb3-143ea1949b04" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4075FE4E00000000</P>
+</O>
+<O id="e95e8d89-07b1-46e8-aa82-d332a1ebd0a0" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4082B9A040000000</P>
+</O>
+<O id="4b1193ff-8bbf-4b70-98c8-8125d43c07c8" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40ACACEB80000000</P>
+</O>
+<O id="45bd3634-98de-4ad4-b1c7-71bf8ece7106" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4084064120000000</P>
+</O>
+<O id="a310b111-ed02-45f3-83d5-f6935d8cf799" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40530D7940000000</P>
+</O>
+<O id="74b1a997-bcd5-4703-8d14-335d52148b71" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40ADE4D280000000</P>
+</O>
+<O id="94d6d8f7-92c0-4709-989f-4f4b449c4cf2" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40859B71C0000000</P>
+</O>
+<O id="a4401768-05b5-4ca9-9571-df24fedab22b" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40801959E0000000</P>
+</O>
+<O id="7d40876f-74ca-4705-b5a0-c1a834e1a2e5" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0453CA0000000</P>
+</O>
+<O id="27f111cf-ca0c-4ee1-a930-7c7a271a6107" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4072E7B860000000</P>
+</O>
+<O id="c97327de-b8da-45f9-b5bb-8b72e6eb6418" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40819228C0000000</P>
+</O>
+<O id="9ad712fb-0312-4620-90a0-136cfd143197" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B10FFC80000000</P>
+</O>
+<O id="5b54350b-831e-4a20-91b2-01966484132a" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4082D404C0000000</P>
+</O>
+<O id="a124861a-a184-4fe6-8179-4ff3401cd666" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407EA430C0000000</P>
+</O>
+<O id="967a93f5-f9be-4f0b-88fd-b1d30ee543a1" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40ADDC07A0000000</P>
+</O>
+<O id="e1a34798-aa35-4b35-9baf-7ceed97c0574" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407E8EAD80000000</P>
+</O>
+<O id="55efdd58-19be-46f5-8af4-c3755e0222ff" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407FE54F20000000</P>
+</O>
+<O id="53e54466-c4c2-4905-8580-aa1ec0ba845c" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AF517540000000</P>
+</O>
+<O id="7c32828c-b8fc-4083-988a-96c4a8820c64" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407AA5B560000000</P>
+</O>
+<O id="ae386649-f66b-4619-9603-511c2842555f" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407C487AA0000000</P>
+</O>
+<O id="8cabe38c-0e87-4166-884f-8c59cb2371cf" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0072740000000</P>
+</O>
+<O id="c53ae866-8288-40a3-a02c-6544fa90a345" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40764535C0000000</P>
+</O>
+<O id="1c02717b-a71b-49c8-a8d1-76b9bbc84fac" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40818FD920000000</P>
+</O>
+<O id="a3344722-099f-4ae6-abb6-9bf188071356" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40ACA04A80000000</P>
+</O>
+<O id="6ecf1dd8-b17b-4361-a5b1-353a23837a6d" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C050834D80000000</P>
+</O>
+<O id="7d3da6a4-9909-4829-a14b-d7a74e533da9" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4034A11A60000000</P>
+</O>
+<O id="92bb5164-1864-4692-b248-ed75f44979d8" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0A50B40000000</P>
+</O>
+<O id="c18f667f-d1bb-40f8-bcdd-35e05e0ec37f" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">408109D740000000</P>
+</O>
+<O id="9cd7252c-6994-4cd7-ae1d-9d49d689e2e1" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4081675960000000</P>
+</O>
+<O id="96a7900c-a41b-44e9-9d6d-5c0122c58149" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AFAC0800000000</P>
+</O>
+<O id="7e1d2e45-5e34-44f5-9904-261197b881c8" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4081A6EBE0000000</P>
+</O>
+<O id="e598f469-5f9a-47eb-add5-68af3899b62c" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40744A97C0000000</P>
+</O>
+<O id="152c7947-71c2-4c96-a27d-b9c18b4100c4" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0478140000000</P>
+</O>
+<O id="bc00cc48-351a-4359-8137-f5c2f6515f40" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40469C9D60000000</P>
+</O>
+<O id="e309b4b8-6cf2-4bf2-bbe5-81165be9ce60" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4080CCA420000000</P>
+</O>
+<O id="061e47ae-7128-42b2-9259-bb35fb48066b" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0956A20000000</P>
+</O>
+<O id="50db1c48-f594-4243-bb1f-41c319eeb4ce" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">409079C4E0000000</P>
+</O>
+<O id="f9419269-738c-4be0-840f-13c945ae3729" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C054F5E600000000</P>
+</O>
+<O id="18e54942-e011-4c7a-9d7f-15e949055624" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AF1FDA60000000</P>
+</O>
+<O id="d1bdb7cc-a8cd-40b7-8c37-f0f3b758a744" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40634CCEA0000000</P>
+</O>
+<O id="798b91b7-ffe4-441c-aed2-4bae1d70d3c5" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40817C66A0000000</P>
+</O>
+<O id="571f638a-77e1-48ef-a41c-412c72188228" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B07616E0000000</P>
+</O>
+<O id="3d840f78-300d-484a-8da2-0426f55fc0ea" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407D19B340000000</P>
+</O>
+<O id="ee6617c3-22dd-4962-b2f8-9b4400ff2dad" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4082421B00000000</P>
+</O>
+<O id="7029ced5-dce6-43bd-8ad1-25889e78cd27" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B04F4560000000</P>
+</O>
+<O id="ba8e6cd8-58f8-44a8-b359-18c3eb72bc1d" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">406186FCC0000000</P>
+</O>
+<O id="ebcd0196-0890-4469-bce2-edd9ec58e66d" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40831571A0000000</P>
+</O>
+<O id="6266d9c0-173d-4af1-b048-ade0ec953db2" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AE4C6680000000</P>
+</O>
+<O id="52f73f8e-8898-4ce2-afa8-e0e822f23bc7" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4035DC13E0000000</P>
+</O>
+<O id="40abbd3e-93a0-4905-a8c0-ebc6780d1fce" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">406F469580000000</P>
+</O>
+<O id="9cd5523e-8058-4240-9bb0-273e75a65387" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40ACD758A0000000</P>
+</O>
+<O id="1c186938-8d7f-46e0-abbc-71f94b942385" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4071D6F180000000</P>
+</O>
+<O id="71b77491-48da-4fec-b179-ff8b831eae28" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40802C8F00000000</P>
+</O>
+<O id="ecf61500-7764-468c-ad5a-d69572440bc6" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AACF41A0000000</P>
+</O>
+<O id="0a3be56a-400b-4e2e-a1bd-c3a5ff3fe3aa" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4075CAB200000000</P>
+</O>
+<O id="b9361ccf-c289-49d1-bb81-e5244ba804b8" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C04F54FF60000000</P>
+</O>
+<O id="277e685d-dbc8-44fa-8f56-3d0e787daa57" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AE451100000000</P>
+</O>
+<O id="f3d20c91-21e8-4d52-94d1-7c3e78bb560e" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40915F9280000000</P>
+</O>
+<O id="ed39cc3a-2151-43e9-82f3-0ea2a77f14cf" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">403A50F0C0000000</P>
+</O>
+<O id="008c8652-f426-4441-88e8-86a13b93c3ec" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0782540000000</P>
+</O>
+<O id="6d00f3a9-ff41-4367-9696-62adc48a63b1" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4090480E20000000</P>
+</O>
+<O id="a506fb16-eab9-467b-9503-29b4e29a3ee5" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">C0717A15A0000000</P>
+</O>
+<O id="4956b43b-b12e-4a5f-8c73-055382734973" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40ACE631C0000000</P>
+</O>
+<O id="1ad4dcc8-327d-4bb3-8833-e65f99c99f25" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">406CE8D440000000</P>
+</O>
+<O id="8f897155-7947-45e5-961d-36d0c9a49bb3" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">407F414900000000</P>
+</O>
+<O id="051780a6-16b3-4018-a0e0-f8aac1eefbcb" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40AFD7D7A0000000</P>
+</O>
+<O id="54344e0a-4e12-4bcd-8b36-d7d6dfec4089" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4073D4E280000000</P>
+</O>
+<O id="e3c7242f-4720-4389-9a71-7050b0c3d90f" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">4081824A80000000</P>
+</O>
+<O id="a8385b30-fc41-4a97-82ef-8563bd8896e2" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>X</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40B0D2E160000000</P>
+</O>
+<O id="4020465c-1f34-4836-805e-005402e335cd" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Y</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">406438B620000000</P>
+</O>
+<O id="6b77002b-a479-4813-b1b9-20fe8c5e83de" clsid="SPCCtrl">
+<P id="SPCBonus">0000000000000000</P>
+<P id="SPCCtrlName">
+<E>1</E>
+<E>Z</E>
+</P>
+<P id="Name">___default___</P>
+<P id="Used">1</P>
+<P id="SPCMeasuredValue">40808D6D00000000</P>
+</O>
+</Objects>
+<Links nb="224">
+<Relation id="SPCObj-SPCCtrl">
+<L a="f7c86028-ac20-4f41-87d1-7dc27e79228e" b="52ee63fd-b944-4e8b-8248-6e6e5a226f17"/>
+<L a="f7c86028-ac20-4f41-87d1-7dc27e79228e" b="bc1daa74-d4f1-41e9-aac8-01b931d168a1"/>
+<L a="f7c86028-ac20-4f41-87d1-7dc27e79228e" b="df456f31-4f16-48f1-b768-7fc39ea1ee89"/>
+<L a="85dbbdd5-0a7e-42b4-9af4-2aa241491e67" b="d4a15089-6a0c-4550-b023-abcd9e2c9543"/>
+<L a="85dbbdd5-0a7e-42b4-9af4-2aa241491e67" b="2da1d4f1-83f4-44d0-b8b2-9194c5214c3c"/>
+<L a="85dbbdd5-0a7e-42b4-9af4-2aa241491e67" b="cd1a72c0-84f3-4a9e-9aa8-d2963ae53e43"/>
+<L a="763efcfa-7463-42a2-a448-eb2f9c6689fc" b="e2de02fc-5967-4109-a1c7-f958cb28b694"/>
+<L a="763efcfa-7463-42a2-a448-eb2f9c6689fc" b="072a3bfe-bb60-462f-90da-3886ae9a7f7f"/>
+<L a="763efcfa-7463-42a2-a448-eb2f9c6689fc" b="184337c6-d2f2-4a1a-9138-b26668b87268"/>
+<L a="9f69c8c6-3fb8-4344-bcd0-1074f7384c93" b="cdd0ca0f-472c-45f8-8596-f906898342ef"/>
+<L a="9f69c8c6-3fb8-4344-bcd0-1074f7384c93" b="b80d3eba-fb75-4fdf-b5b7-fe18e7370520"/>
+<L a="9f69c8c6-3fb8-4344-bcd0-1074f7384c93" b="209f90e4-7870-4b8e-8650-c6558c3f4d0b"/>
+<L a="45a3b851-131b-42a4-861a-7167b753f9f9" b="d20ead9c-a571-4fc6-8456-7dfb2df82bf3"/>
+<L a="45a3b851-131b-42a4-861a-7167b753f9f9" b="ddb515f4-af29-4db1-bba5-d170dd89d3f1"/>
+<L a="45a3b851-131b-42a4-861a-7167b753f9f9" b="ecad639d-0907-4c3e-9632-ab7c8205e005"/>
+<L a="95796b77-17ce-4ed9-9a12-eb13eaa8928e" b="741f01fa-7f6a-4a97-9520-c446d6766c7a"/>
+<L a="95796b77-17ce-4ed9-9a12-eb13eaa8928e" b="b29c4f70-67f7-40fc-b4ab-dfd28f349500"/>
+<L a="95796b77-17ce-4ed9-9a12-eb13eaa8928e" b="efdcaea0-ab3f-43a0-adff-15eacafaa023"/>
+<L a="8cbb888c-46a6-4849-a716-6ee9cec44a97" b="5a78aab3-cecd-42d8-b2df-35bbda0cb5d3"/>
+<L a="8cbb888c-46a6-4849-a716-6ee9cec44a97" b="2ce847ea-86d8-489a-a815-11c9773fac17"/>
+<L a="8cbb888c-46a6-4849-a716-6ee9cec44a97" b="9fceac7a-5e2f-43c4-a875-e8f8d2fc6e0d"/>
+<L a="44d4a82d-cc91-4461-8609-648cdee6d5cc" b="2c2e4968-0075-4beb-be5e-cf09001c2a69"/>
+<L a="44d4a82d-cc91-4461-8609-648cdee6d5cc" b="34547cf8-2c7c-4dbb-a075-3f390c0b350d"/>
+<L a="44d4a82d-cc91-4461-8609-648cdee6d5cc" b="b5bab987-b098-4b07-b1e3-fef91027560b"/>
+<L a="d699d746-28d9-4d11-972e-956cf729426a" b="8688291b-f093-43bb-bc5c-c13567779273"/>
+<L a="d699d746-28d9-4d11-972e-956cf729426a" b="88f316d9-58a1-4af4-b3c4-a5f271854a37"/>
+<L a="d699d746-28d9-4d11-972e-956cf729426a" b="e3515d25-90d6-4a62-843b-bc0e7bc55316"/>
+<L a="c73ec0e8-7bd4-4ca4-b9c9-87165d62fb9d" b="d3620125-8c39-4fdf-8de5-8d773b094589"/>
+<L a="c73ec0e8-7bd4-4ca4-b9c9-87165d62fb9d" b="1661dd04-a63e-402c-8b59-0a4abf6dfddc"/>
+<L a="c73ec0e8-7bd4-4ca4-b9c9-87165d62fb9d" b="71f34cfb-26e9-4fbc-9718-0b4c515928cb"/>
+<L a="5ddb10d6-6c25-4b18-b4f2-4ca1c78ac2a7" b="355bac79-8dd3-468d-b6a4-2bbb52784d79"/>
+<L a="5ddb10d6-6c25-4b18-b4f2-4ca1c78ac2a7" b="b42541f2-92d7-4a82-9180-9b81d83ad754"/>
+<L a="5ddb10d6-6c25-4b18-b4f2-4ca1c78ac2a7" b="8a47a59f-4fa6-45e5-90ac-001fa425b3a9"/>
+<L a="25754bbe-3939-4cb2-be70-64fa58339d76" b="1d30aa52-5bdb-4593-8aeb-6bef6bf41171"/>
+<L a="25754bbe-3939-4cb2-be70-64fa58339d76" b="c6044246-ce4c-4999-9934-43b8d0561372"/>
+<L a="25754bbe-3939-4cb2-be70-64fa58339d76" b="76ea71c3-dc8b-4dbd-9ed4-fcc312feaa9e"/>
+<L a="a9200b16-81f0-4d98-966e-feff6808c83a" b="4d6fdc66-3996-43c8-8bb7-5a0e8536008f"/>
+<L a="a9200b16-81f0-4d98-966e-feff6808c83a" b="99c5d40c-2734-439a-8fbf-df791c0f34c7"/>
+<L a="a9200b16-81f0-4d98-966e-feff6808c83a" b="ab74570e-d2b0-4e3c-be7d-b0da86aac506"/>
+<L a="87527450-430a-4a89-af82-ad57245d9aac" b="905f196d-944c-41a8-bc0f-8f51fdb1315b"/>
+<L a="87527450-430a-4a89-af82-ad57245d9aac" b="0acad94d-96e8-4265-9ea2-c0bcad7696de"/>
+<L a="87527450-430a-4a89-af82-ad57245d9aac" b="85c55974-91f3-41ff-9ac0-f752db9ed4c5"/>
+<L a="bdcd7b4b-abc7-41db-8538-24b6a7ef4fa9" b="332bb17a-ab92-461f-aa7a-76ea952d2555"/>
+<L a="bdcd7b4b-abc7-41db-8538-24b6a7ef4fa9" b="52d00dbf-b053-4469-872b-213121e41e5b"/>
+<L a="bdcd7b4b-abc7-41db-8538-24b6a7ef4fa9" b="61d050af-cac9-4576-a928-241cf7e04079"/>
+<L a="a29071b6-700f-4afa-86b9-45644482ac63" b="19c334d2-0be8-4d7d-af94-9c7e66a9d2aa"/>
+<L a="a29071b6-700f-4afa-86b9-45644482ac63" b="242e0367-8ac7-49f1-a83d-8091f59e8502"/>
+<L a="a29071b6-700f-4afa-86b9-45644482ac63" b="58194b23-2d0c-4fb0-b028-5ad566c2a228"/>
+<L a="4ff0a863-ace1-4f36-b7af-246a4a15c42c" b="a508fe3d-930c-461c-b12f-9128562c2d25"/>
+<L a="4ff0a863-ace1-4f36-b7af-246a4a15c42c" b="5286cccb-e504-4ab1-89e9-21f8430d9c9f"/>
+<L a="4ff0a863-ace1-4f36-b7af-246a4a15c42c" b="275455b5-f20b-4287-8e1c-a01feba46c48"/>
+<L a="cd152e25-aaae-49ff-a541-9c49537235aa" b="7caeda19-badd-4aa6-bfb8-68f9486b13bd"/>
+<L a="cd152e25-aaae-49ff-a541-9c49537235aa" b="1bc7a93f-efed-47db-a227-b08c02f504ca"/>
+<L a="cd152e25-aaae-49ff-a541-9c49537235aa" b="6fde2bdf-d101-44b1-9e7e-181a26a0a6c1"/>
+<L a="5acc5f3c-c0ae-410c-b499-c799ed858493" b="20903aa8-2061-454e-8d3a-b2e01b2d4d09"/>
+<L a="5acc5f3c-c0ae-410c-b499-c799ed858493" b="f9997c1f-e0aa-49a4-aecc-32be77858333"/>
+<L a="5acc5f3c-c0ae-410c-b499-c799ed858493" b="e6ca43b9-8848-4eea-981c-183b3ca0ebdd"/>
+<L a="b5b7d95f-dfe9-49f5-8396-cb744052d8c2" b="0ae72f34-cba0-42fb-b573-9590a81dee1c"/>
+<L a="b5b7d95f-dfe9-49f5-8396-cb744052d8c2" b="255b2888-5be0-4935-947f-f2dbe6ae2286"/>
+<L a="b5b7d95f-dfe9-49f5-8396-cb744052d8c2" b="8fdd14c3-a80d-495e-a560-99d89fd45c5b"/>
+<L a="7b87c6f4-acc4-488d-9e51-b7d3bb1a7749" b="1392f824-b324-4119-aa0d-b8bfeb03a8e8"/>
+<L a="7b87c6f4-acc4-488d-9e51-b7d3bb1a7749" b="5da88ee9-0bf2-4683-a713-1e49c4f6791d"/>
+<L a="7b87c6f4-acc4-488d-9e51-b7d3bb1a7749" b="ef3a9a4a-3c9f-4b0a-8ae7-50ff6fc0add9"/>
+<L a="8ed4b785-0dde-4457-8f68-d691b094f4cd" b="b0bc241c-3243-4da2-8ace-68d9b1c2f42e"/>
+<L a="8ed4b785-0dde-4457-8f68-d691b094f4cd" b="e39efe42-f2b2-427b-bacf-230d03cfdfa6"/>
+<L a="8ed4b785-0dde-4457-8f68-d691b094f4cd" b="f7ece7b5-4c4f-4478-87a2-53af0dbda57d"/>
+<L a="0cc182f8-e47a-49ce-839e-54fc139d380a" b="c1db8bf8-5176-474f-abd4-77696c69a5e2"/>
+<L a="0cc182f8-e47a-49ce-839e-54fc139d380a" b="8271ae65-29d3-448a-9773-a85b88e02470"/>
+<L a="0cc182f8-e47a-49ce-839e-54fc139d380a" b="2762676e-f4e4-4bcc-bc10-c84679b7631d"/>
+<L a="bc0fdbee-4ddd-4469-9907-1e120fc2e4d0" b="3b6c62c9-76db-4b10-9702-1e3a3cececed"/>
+<L a="bc0fdbee-4ddd-4469-9907-1e120fc2e4d0" b="69a11a7e-ce3c-4feb-a5d5-69d09ee3a603"/>
+<L a="bc0fdbee-4ddd-4469-9907-1e120fc2e4d0" b="d9d9a8b9-3dbc-45b1-9a73-a0c1d5384e0c"/>
+<L a="63d10873-fa72-422b-b84c-8afb68606f90" b="981c286d-4603-411c-a959-87131f5acf3c"/>
+<L a="63d10873-fa72-422b-b84c-8afb68606f90" b="63793845-c036-43b3-98d8-ffd58521c01b"/>
+<L a="63d10873-fa72-422b-b84c-8afb68606f90" b="81476b3b-1285-4ae7-9a41-d910ed82be60"/>
+<L a="b0517bdc-6295-456a-ba30-e904bcde7c9b" b="33b8f0c1-0f7f-4b62-86c1-5b767c10df77"/>
+<L a="b0517bdc-6295-456a-ba30-e904bcde7c9b" b="186fc170-64d2-4a4d-bd92-aa6f211e5bed"/>
+<L a="b0517bdc-6295-456a-ba30-e904bcde7c9b" b="9971b6c0-dcd5-4b04-8981-34224be0b016"/>
+<L a="61c5155a-cca6-42a5-a737-db358cb30a97" b="002a4458-258a-41f8-9fe4-198d2012c826"/>
+<L a="61c5155a-cca6-42a5-a737-db358cb30a97" b="beb961a7-b5d3-4b18-8e38-bec92c63bc43"/>
+<L a="61c5155a-cca6-42a5-a737-db358cb30a97" b="6b66c20c-a649-40b1-9ea2-83eab7ccf195"/>
+<L a="b191a83a-2281-4d89-a359-29e1975f3fb6" b="fb43af87-d556-41f5-951b-d87e52d7ec37"/>
+<L a="b191a83a-2281-4d89-a359-29e1975f3fb6" b="a31f3019-0b82-4d88-a126-c258cf6c8e8d"/>
+<L a="b191a83a-2281-4d89-a359-29e1975f3fb6" b="fb524e01-a4fb-4349-8c6d-a7600d830b8a"/>
+<L a="63d7f5cf-401c-487d-a934-9793f7cf7b44" b="f35b2351-8d15-4cd7-9a2f-4e19ea5cbc21"/>
+<L a="63d7f5cf-401c-487d-a934-9793f7cf7b44" b="2ceec4c1-09a9-4901-812a-78d0d57defec"/>
+<L a="63d7f5cf-401c-487d-a934-9793f7cf7b44" b="99030363-c623-4ba8-a78e-61deeb52cfe9"/>
+<L a="32ab698a-180b-4a20-8bdc-bbe3401dcd84" b="ca37f787-cd81-4d36-bcb2-de3718e3ba0a"/>
+<L a="32ab698a-180b-4a20-8bdc-bbe3401dcd84" b="7f9cdddc-5f7a-41cd-8598-e31ce8e7e7d6"/>
+<L a="32ab698a-180b-4a20-8bdc-bbe3401dcd84" b="90e9062c-a2ba-4e7e-a80d-c29754762319"/>
+<L a="ed8da403-239c-46d4-a17c-247da5fb6f3f" b="fdaca112-c432-4735-9e8f-7200affc9e05"/>
+<L a="ed8da403-239c-46d4-a17c-247da5fb6f3f" b="cbeb47d8-5a9c-44dc-866e-dd19811e7d41"/>
+<L a="ed8da403-239c-46d4-a17c-247da5fb6f3f" b="f39a66e2-cbf2-4ce3-96fe-cfe16f57f1c6"/>
+<L a="7d302279-09f6-4a19-821a-8225972f3d24" b="a955abe1-e288-48ac-8b5c-e38a6caafe58"/>
+<L a="7d302279-09f6-4a19-821a-8225972f3d24" b="13d7137c-1d31-4196-8105-03a91af097cd"/>
+<L a="7d302279-09f6-4a19-821a-8225972f3d24" b="acf6f397-f330-4515-8f54-bf54bdf560b0"/>
+<L a="ea33d0a9-93a2-49ef-9383-d1487981b950" b="b35283cd-626a-4743-9aaf-3beadcae8ffa"/>
+<L a="ea33d0a9-93a2-49ef-9383-d1487981b950" b="f15e073f-8772-4c0e-bcb3-143ea1949b04"/>
+<L a="ea33d0a9-93a2-49ef-9383-d1487981b950" b="e95e8d89-07b1-46e8-aa82-d332a1ebd0a0"/>
+<L a="eaf724e7-dfea-4393-9299-8833c20aec96" b="4b1193ff-8bbf-4b70-98c8-8125d43c07c8"/>
+<L a="eaf724e7-dfea-4393-9299-8833c20aec96" b="45bd3634-98de-4ad4-b1c7-71bf8ece7106"/>
+<L a="eaf724e7-dfea-4393-9299-8833c20aec96" b="a310b111-ed02-45f3-83d5-f6935d8cf799"/>
+<L a="fd38766a-587a-465b-a13c-d3fb28721cc4" b="74b1a997-bcd5-4703-8d14-335d52148b71"/>
+<L a="fd38766a-587a-465b-a13c-d3fb28721cc4" b="94d6d8f7-92c0-4709-989f-4f4b449c4cf2"/>
+<L a="fd38766a-587a-465b-a13c-d3fb28721cc4" b="a4401768-05b5-4ca9-9571-df24fedab22b"/>
+<L a="c44fcc92-15fb-403b-b80d-3862afb07843" b="7d40876f-74ca-4705-b5a0-c1a834e1a2e5"/>
+<L a="c44fcc92-15fb-403b-b80d-3862afb07843" b="27f111cf-ca0c-4ee1-a930-7c7a271a6107"/>
+<L a="c44fcc92-15fb-403b-b80d-3862afb07843" b="c97327de-b8da-45f9-b5bb-8b72e6eb6418"/>
+<L a="5d124b83-d0a7-461f-a253-8aaa1300e5cf" b="9ad712fb-0312-4620-90a0-136cfd143197"/>
+<L a="5d124b83-d0a7-461f-a253-8aaa1300e5cf" b="5b54350b-831e-4a20-91b2-01966484132a"/>
+<L a="5d124b83-d0a7-461f-a253-8aaa1300e5cf" b="a124861a-a184-4fe6-8179-4ff3401cd666"/>
+<L a="e6749956-6e8f-4b5e-95d8-410e1c567cf9" b="967a93f5-f9be-4f0b-88fd-b1d30ee543a1"/>
+<L a="e6749956-6e8f-4b5e-95d8-410e1c567cf9" b="e1a34798-aa35-4b35-9baf-7ceed97c0574"/>
+<L a="e6749956-6e8f-4b5e-95d8-410e1c567cf9" b="55efdd58-19be-46f5-8af4-c3755e0222ff"/>
+<L a="0ccc1e84-a947-439c-a718-bf77b0843980" b="53e54466-c4c2-4905-8580-aa1ec0ba845c"/>
+<L a="0ccc1e84-a947-439c-a718-bf77b0843980" b="7c32828c-b8fc-4083-988a-96c4a8820c64"/>
+<L a="0ccc1e84-a947-439c-a718-bf77b0843980" b="ae386649-f66b-4619-9603-511c2842555f"/>
+<L a="1c035f2b-a6d2-47c9-87f1-5d180fa95248" b="8cabe38c-0e87-4166-884f-8c59cb2371cf"/>
+<L a="1c035f2b-a6d2-47c9-87f1-5d180fa95248" b="c53ae866-8288-40a3-a02c-6544fa90a345"/>
+<L a="1c035f2b-a6d2-47c9-87f1-5d180fa95248" b="1c02717b-a71b-49c8-a8d1-76b9bbc84fac"/>
+<L a="f56c52c4-8ace-47d0-b9a2-c8e5e60d35e8" b="a3344722-099f-4ae6-abb6-9bf188071356"/>
+<L a="f56c52c4-8ace-47d0-b9a2-c8e5e60d35e8" b="6ecf1dd8-b17b-4361-a5b1-353a23837a6d"/>
+<L a="f56c52c4-8ace-47d0-b9a2-c8e5e60d35e8" b="7d3da6a4-9909-4829-a14b-d7a74e533da9"/>
+<L a="bdcc4d14-333e-4c82-9b89-cd4cf7a7ee59" b="92bb5164-1864-4692-b248-ed75f44979d8"/>
+<L a="bdcc4d14-333e-4c82-9b89-cd4cf7a7ee59" b="c18f667f-d1bb-40f8-bcdd-35e05e0ec37f"/>
+<L a="bdcc4d14-333e-4c82-9b89-cd4cf7a7ee59" b="9cd7252c-6994-4cd7-ae1d-9d49d689e2e1"/>
+<L a="256d6fd5-badf-40b5-9470-e4653cc15518" b="96a7900c-a41b-44e9-9d6d-5c0122c58149"/>
+<L a="256d6fd5-badf-40b5-9470-e4653cc15518" b="7e1d2e45-5e34-44f5-9904-261197b881c8"/>
+<L a="256d6fd5-badf-40b5-9470-e4653cc15518" b="e598f469-5f9a-47eb-add5-68af3899b62c"/>
+<L a="9f106ccd-a1cb-40d2-ab98-765133ec6a42" b="152c7947-71c2-4c96-a27d-b9c18b4100c4"/>
+<L a="9f106ccd-a1cb-40d2-ab98-765133ec6a42" b="bc00cc48-351a-4359-8137-f5c2f6515f40"/>
+<L a="9f106ccd-a1cb-40d2-ab98-765133ec6a42" b="e309b4b8-6cf2-4bf2-bbe5-81165be9ce60"/>
+<L a="3db153e6-b8b1-46a8-b510-8e64eb593d4a" b="061e47ae-7128-42b2-9259-bb35fb48066b"/>
+<L a="3db153e6-b8b1-46a8-b510-8e64eb593d4a" b="50db1c48-f594-4243-bb1f-41c319eeb4ce"/>
+<L a="3db153e6-b8b1-46a8-b510-8e64eb593d4a" b="f9419269-738c-4be0-840f-13c945ae3729"/>
+<L a="ea4e587f-4c82-49ee-9828-c28120d6845a" b="18e54942-e011-4c7a-9d7f-15e949055624"/>
+<L a="ea4e587f-4c82-49ee-9828-c28120d6845a" b="d1bdb7cc-a8cd-40b7-8c37-f0f3b758a744"/>
+<L a="ea4e587f-4c82-49ee-9828-c28120d6845a" b="798b91b7-ffe4-441c-aed2-4bae1d70d3c5"/>
+<L a="1870a4d0-df24-4814-ab58-8c0ffbad0157" b="571f638a-77e1-48ef-a41c-412c72188228"/>
+<L a="1870a4d0-df24-4814-ab58-8c0ffbad0157" b="3d840f78-300d-484a-8da2-0426f55fc0ea"/>
+<L a="1870a4d0-df24-4814-ab58-8c0ffbad0157" b="ee6617c3-22dd-4962-b2f8-9b4400ff2dad"/>
+<L a="95cf4cb5-50e5-478a-b157-b8d5ca3cf6d2" b="7029ced5-dce6-43bd-8ad1-25889e78cd27"/>
+<L a="95cf4cb5-50e5-478a-b157-b8d5ca3cf6d2" b="ba8e6cd8-58f8-44a8-b359-18c3eb72bc1d"/>
+<L a="95cf4cb5-50e5-478a-b157-b8d5ca3cf6d2" b="ebcd0196-0890-4469-bce2-edd9ec58e66d"/>
+<L a="7f7f68b3-5af2-4bd6-9381-47a008a7d1d2" b="6266d9c0-173d-4af1-b048-ade0ec953db2"/>
+<L a="7f7f68b3-5af2-4bd6-9381-47a008a7d1d2" b="52f73f8e-8898-4ce2-afa8-e0e822f23bc7"/>
+<L a="7f7f68b3-5af2-4bd6-9381-47a008a7d1d2" b="40abbd3e-93a0-4905-a8c0-ebc6780d1fce"/>
+<L a="2a7559f9-6cb4-474b-a75f-af4348507489" b="9cd5523e-8058-4240-9bb0-273e75a65387"/>
+<L a="2a7559f9-6cb4-474b-a75f-af4348507489" b="1c186938-8d7f-46e0-abbc-71f94b942385"/>
+<L a="2a7559f9-6cb4-474b-a75f-af4348507489" b="71b77491-48da-4fec-b179-ff8b831eae28"/>
+<L a="df368f93-dbb3-4957-98bc-bab51414bcb1" b="ecf61500-7764-468c-ad5a-d69572440bc6"/>
+<L a="df368f93-dbb3-4957-98bc-bab51414bcb1" b="0a3be56a-400b-4e2e-a1bd-c3a5ff3fe3aa"/>
+<L a="df368f93-dbb3-4957-98bc-bab51414bcb1" b="b9361ccf-c289-49d1-bb81-e5244ba804b8"/>
+<L a="61871fbd-8f17-462d-9229-0d345ab0a65f" b="277e685d-dbc8-44fa-8f56-3d0e787daa57"/>
+<L a="61871fbd-8f17-462d-9229-0d345ab0a65f" b="f3d20c91-21e8-4d52-94d1-7c3e78bb560e"/>
+<L a="61871fbd-8f17-462d-9229-0d345ab0a65f" b="ed39cc3a-2151-43e9-82f3-0ea2a77f14cf"/>
+<L a="71a69e59-3428-4776-8441-184aeb19a9ff" b="008c8652-f426-4441-88e8-86a13b93c3ec"/>
+<L a="71a69e59-3428-4776-8441-184aeb19a9ff" b="6d00f3a9-ff41-4367-9696-62adc48a63b1"/>
+<L a="71a69e59-3428-4776-8441-184aeb19a9ff" b="a506fb16-eab9-467b-9503-29b4e29a3ee5"/>
+<L a="e841afbb-86c4-472c-a217-15161f32ea34" b="4956b43b-b12e-4a5f-8c73-055382734973"/>
+<L a="e841afbb-86c4-472c-a217-15161f32ea34" b="1ad4dcc8-327d-4bb3-8833-e65f99c99f25"/>
+<L a="e841afbb-86c4-472c-a217-15161f32ea34" b="8f897155-7947-45e5-961d-36d0c9a49bb3"/>
+<L a="112755a9-2fb1-4042-92e6-9f6d24997e4a" b="051780a6-16b3-4018-a0e0-f8aac1eefbcb"/>
+<L a="112755a9-2fb1-4042-92e6-9f6d24997e4a" b="54344e0a-4e12-4bcd-8b36-d7d6dfec4089"/>
+<L a="112755a9-2fb1-4042-92e6-9f6d24997e4a" b="e3c7242f-4720-4389-9a71-7050b0c3d90f"/>
+<L a="49dd317c-9285-4d58-9737-629f2cfa74ae" b="a8385b30-fc41-4a97-82ef-8563bd8896e2"/>
+<L a="49dd317c-9285-4d58-9737-629f2cfa74ae" b="4020465c-1f34-4836-805e-005402e335cd"/>
+<L a="49dd317c-9285-4d58-9737-629f2cfa74ae" b="6b77002b-a479-4813-b1b9-20fe8c5e83de"/>
+</Relation>
+<Relation id="Piece-SPCObj2">
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="f7c86028-ac20-4f41-87d1-7dc27e79228e"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="85dbbdd5-0a7e-42b4-9af4-2aa241491e67"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="763efcfa-7463-42a2-a448-eb2f9c6689fc"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="9f69c8c6-3fb8-4344-bcd0-1074f7384c93"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="45a3b851-131b-42a4-861a-7167b753f9f9"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="95796b77-17ce-4ed9-9a12-eb13eaa8928e"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="8cbb888c-46a6-4849-a716-6ee9cec44a97"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="44d4a82d-cc91-4461-8609-648cdee6d5cc"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="d699d746-28d9-4d11-972e-956cf729426a"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="c73ec0e8-7bd4-4ca4-b9c9-87165d62fb9d"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="5ddb10d6-6c25-4b18-b4f2-4ca1c78ac2a7"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="25754bbe-3939-4cb2-be70-64fa58339d76"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="a9200b16-81f0-4d98-966e-feff6808c83a"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="87527450-430a-4a89-af82-ad57245d9aac"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="bdcd7b4b-abc7-41db-8538-24b6a7ef4fa9"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="a29071b6-700f-4afa-86b9-45644482ac63"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="4ff0a863-ace1-4f36-b7af-246a4a15c42c"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="cd152e25-aaae-49ff-a541-9c49537235aa"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="5acc5f3c-c0ae-410c-b499-c799ed858493"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="b5b7d95f-dfe9-49f5-8396-cb744052d8c2"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="7b87c6f4-acc4-488d-9e51-b7d3bb1a7749"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="8ed4b785-0dde-4457-8f68-d691b094f4cd"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="0cc182f8-e47a-49ce-839e-54fc139d380a"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="bc0fdbee-4ddd-4469-9907-1e120fc2e4d0"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="63d10873-fa72-422b-b84c-8afb68606f90"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="b0517bdc-6295-456a-ba30-e904bcde7c9b"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="61c5155a-cca6-42a5-a737-db358cb30a97"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="b191a83a-2281-4d89-a359-29e1975f3fb6"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="63d7f5cf-401c-487d-a934-9793f7cf7b44"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="32ab698a-180b-4a20-8bdc-bbe3401dcd84"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="ed8da403-239c-46d4-a17c-247da5fb6f3f"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="7d302279-09f6-4a19-821a-8225972f3d24"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="ea33d0a9-93a2-49ef-9383-d1487981b950"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="eaf724e7-dfea-4393-9299-8833c20aec96"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="fd38766a-587a-465b-a13c-d3fb28721cc4"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="c44fcc92-15fb-403b-b80d-3862afb07843"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="5d124b83-d0a7-461f-a253-8aaa1300e5cf"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="e6749956-6e8f-4b5e-95d8-410e1c567cf9"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="0ccc1e84-a947-439c-a718-bf77b0843980"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="1c035f2b-a6d2-47c9-87f1-5d180fa95248"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="f56c52c4-8ace-47d0-b9a2-c8e5e60d35e8"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="bdcc4d14-333e-4c82-9b89-cd4cf7a7ee59"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="256d6fd5-badf-40b5-9470-e4653cc15518"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="9f106ccd-a1cb-40d2-ab98-765133ec6a42"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="3db153e6-b8b1-46a8-b510-8e64eb593d4a"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="ea4e587f-4c82-49ee-9828-c28120d6845a"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="1870a4d0-df24-4814-ab58-8c0ffbad0157"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="95cf4cb5-50e5-478a-b157-b8d5ca3cf6d2"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="7f7f68b3-5af2-4bd6-9381-47a008a7d1d2"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="2a7559f9-6cb4-474b-a75f-af4348507489"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="df368f93-dbb3-4957-98bc-bab51414bcb1"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="61871fbd-8f17-462d-9229-0d345ab0a65f"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="71a69e59-3428-4776-8441-184aeb19a9ff"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="e841afbb-86c4-472c-a217-15161f32ea34"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="112755a9-2fb1-4042-92e6-9f6d24997e4a"/>
+<L a="71a51b0a-1f3f-442b-b758-a4dbbbf8771c" b="49dd317c-9285-4d58-9737-629f2cfa74ae"/>
+</Relation>
+</Links>
+</Model>
+</Schema>
+</ObjectModel>

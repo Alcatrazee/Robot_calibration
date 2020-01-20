@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ObjectModel version="11.0">
+<Schema name="IMInspect" version="15.10">
+<Definition>
+<PropertyTypes>
+<PropertyType id="CatID" version="2.0"/>
+<PropertyType id="Cone" version="1.1"/>
+<PropertyType id="DataCmp" version="7.0"/>
+<PropertyType id="Deviation" version="1.1"/>
+<PropertyType id="DimensionIdentifier" version="5.0"/>
+<PropertyType id="FCFDrawingParameters" version="7.0"/>
+<PropertyType id="GaugeResultDouble" version="2.0"/>
+<PropertyType id="MxdStr" version="2.0"/>
+<PropertyType id="ObjInfo" version="2.0"/>
+<PropertyType id="OrientationAngles" version="3.0"/>
+<PropertyType id="OutOfTol" version="1.1"/>
+<PropertyType id="PercTol" version="1.1"/>
+<PropertyType id="SPCTrendChartData" version="2.0"/>
+<PropertyType id="Stream" version="2.0"/>
+<PropertyType id="SurfCmp" version="3.1"/>
+<PropertyType id="Tol" version="2.0"/>
+<PropertyType id="ToleranceZone" version="3.0"/>
+<PropertyType id="TwoPointSizeResult" version="2.0"/>
+<PropertyType id="ValueVariant" version="2.0"/>
+<PropertyType id="VectDataVarPt" version="1.1"/>
+<PropertyType id="VectorProbedPointInfo" version="1.1"/>
+</PropertyTypes>
+</Definition>
+<Model>
+<Objects nb="1">
+<O id="001d16e8-8330-468c-9edf-aa961db50d50" clsid="DataVarNew">
+<P id="SignFilter">Positive</P>
+<P id="SinglePieceId">71a51b0a-1f3f-442b-b758-a4dbbbf8771c</P>
+<P id="MaxAngle">4046800000000000</P>
+<P id="DVMethod">Piece</P>
+<P id="SamplingStep">3FF0000000000000</P>
+<P id="Offset">0000000000000000</P>
+<P id="CmpPtExtractMethod">Avg</P>
+<P id="UseSignFilter">0</P>
+<P id="DVStat">Avg</P>
+<P id="UseMaxAngle">1</P>
+<P id="UseOffset">0</P>
+<P id="MultRefMatch">Closest</P>
+<P id="CGStddevScaling">4018000000000000</P>
+<P id="TolFilter">Keep beyond HiTol</P>
+<P id="UseTolFilter">0</P>
+<P id="AutoMeas">1</P>
+<P id="UseMinNbPiecesPct">1</P>
+<P id="MinNbPiecesPct">100</P>
+<P id="DataVarPts" null="1"/>
+<P id="MeasuredTimeStamp"/>
+<P id="ScalingFactor">3FF0000000000000</P>
+<P id="DVRadiusType">Auto</P>
+<P id="MaxDist">4010000000000000</P>
+<P id="Radius">3FE0000000000000</P>
+<P id="DVViewMode">SPC</P>
+<P id="CGTolPct">4034000000000000</P>
+<P id="Measured">0</P>
+</O>
+</Objects>
+</Model>
+</Schema>
+</ObjectModel>

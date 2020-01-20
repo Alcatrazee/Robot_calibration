@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ObjectModel version="11.0">
+<Schema name="IMInspect" version="15.10">
+<Definition>
+<PropertyTypes>
+<PropertyType id="CatID" version="2.0"/>
+<PropertyType id="Cone" version="1.1"/>
+<PropertyType id="DataCmp" version="7.0"/>
+<PropertyType id="Deviation" version="1.1"/>
+<PropertyType id="DimensionIdentifier" version="5.0"/>
+<PropertyType id="FCFDrawingParameters" version="7.0"/>
+<PropertyType id="GaugeResultDouble" version="2.0"/>
+<PropertyType id="MxdStr" version="2.0"/>
+<PropertyType id="ObjInfo" version="2.0"/>
+<PropertyType id="OrientationAngles" version="3.0"/>
+<PropertyType id="OutOfTol" version="1.1"/>
+<PropertyType id="PercTol" version="1.1"/>
+<PropertyType id="SPCTrendChartData" version="2.0"/>
+<PropertyType id="Stream" version="2.0"/>
+<PropertyType id="SurfCmp" version="3.1"/>
+<PropertyType id="Tol" version="2.0"/>
+<PropertyType id="ToleranceZone" version="3.0"/>
+<PropertyType id="TwoPointSizeResult" version="2.0"/>
+<PropertyType id="ValueVariant" version="2.0"/>
+<PropertyType id="VectDataVarPt" version="1.1"/>
+<PropertyType id="VectorProbedPointInfo" version="1.1"/>
+</PropertyTypes>
+</Definition>
+<Model>
+<Objects nb="1">
+<O id="dec13ad0-090a-47a1-a8fa-94e77d337390" clsid="Part">
+<P id="Name">___default___</P>
+<P id="PiecePartCustomProperties">0</P>
+<P id="ProdOrder"/>
+<P id="Organization"/>
+<P id="EnableSaveInIMView">1</P>
+<P id="Customer"/>
+<P id="PartNum"/>
+<P id="DrawNum"/>
+</O>
+</Objects>
+</Model>
+</Schema>
+</ObjectModel>
