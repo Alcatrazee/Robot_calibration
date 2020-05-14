@@ -129,7 +129,7 @@ end
 fig2 = figure(2);                                                           % create another window
 bar3(norm_d_eta)                                                            % plot discrete data
 view(-60,20)                                                                % adjust cam 
-legend('||d¦Ç||')
+legend('||dÂ¦Ã‡||')
 
 fig3 = figure(3);
 bar3(norm_dpc);
@@ -169,6 +169,7 @@ for i=1:num_of_test_points
 end
 disp 'norm of distance deviation:'
 norm(deviation(1:3,:))
-disp 'mean of deviation'
-mean(mean(deviation(1:3,:)))
-[P_c0_n_1 P_c0_n_2 P_c0_n_3]
+disp 'mean of error'
+mean(vecnorm(deviation(1:3,:)))
+disp 'max of error'
+max(vecnorm(deviation(1:3,:)))
