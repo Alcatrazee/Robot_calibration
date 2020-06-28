@@ -133,7 +133,7 @@ while j<1000
     clf;                                                                    % clear plot
     draw_manipulator_points(twist_matrix_n,[P_c0_n_1,P_c0_n_2,P_c0_n_3],'b');                     % draw nominal axis
     drawnow;
-    if norm(d_eta) < 1e-10                                                  % quit the for loop if deviation is less than 1e-5
+    if norm(d_eta) < 1e-11                                                  % quit the for loop if deviation is less than 1e-5
         break;
     end
 end
