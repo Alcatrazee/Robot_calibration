@@ -1,11 +1,11 @@
-function B = B_matrix(twist_matrix,measuring_type)
+function B = B_matrix(twist_matrix,measuring_type,num_SMR)
 
 % measuring type: 1:pose 2:point
 
 if measuring_type==1
     B = zeros(42,30);
 elseif measuring_type==2
-    B = zeros(54,33);
+    B = zeros(36+num_SMR*6,24+num_SMR*3);
 else
     error('Measuring type assert failed. Please check parameter.');
 end
@@ -18,11 +18,21 @@ end
 if measuring_type==1
     B(37:42,25:30) = eye(6);
 elseif measuring_type==2
-    B(37:end,25:end) = [eye(3)     zeros(3)   zeros(3);
-                        zeros(3)   zeros(3)   zeros(3);
-                        zeros(3)   eye(3)     zeros(3);
-                        zeros(3)   zeros(3)   zeros(3);
-                        zeros(3)   zeros(3)   eye(3)  ;
-                        zeros(3)   zeros(3)   zeros(3)];
+    if num_SMR == 1
+        B(37:end,25:end) = [eye(3);
+                            zeros(3)];
+    elseif num_SMR == 2
+        B(37:end,25:end) = [eye(3)     zeros(3);
+                            zeros(3)   zeros(3);
+                            zeros(3)   eye(3)  ;
+                            zeros(3)   zeros(3)];
+    elseif num_SMR == 3
+        B(37:end,25:end) = [eye(3)     zeros(3)   zeros(3);
+                            zeros(3)   zeros(3)   zeros(3);
+                            zeros(3)   eye(3)     zeros(3);
+                            zeros(3)   zeros(3)   zeros(3);
+                            zeros(3)   zeros(3)   eye(3)  ;
+                            zeros(3)   zeros(3)   zeros(3)];
+    end
 end
 end

@@ -1,11 +1,6 @@
 %% brief of this program
-% This program is for calibration simulation of robot arm QKM HL6 with
-% RoboDK. This program can calibrate the robot automatically, with randomly
-% generated joint angles, this program can reduce the composition to less
-% than 1e-10.
-% How to use it: run
-% then run this script.
-
+% This program calibrate a QKM HL6, a 6 axis serial robot using paper from
+% 2009.
 %% close all unecessary windows
 close all
 clear;

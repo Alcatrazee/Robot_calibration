@@ -10,7 +10,7 @@ for i=2:7
 end
 
 for i=1:6
-    Q(:,6*i-5:6*i) = Adg(:,:,i) - Adg(:,:,i+1);
+    Q(:,6*i-5:6*i) = Adg(:,:,i) - Adg(:,:,i+1); 
 end
 Q(:,37+(ball_No-1)*6:37+(ball_No)*6-1) = Adg(:,:,7);
 end
