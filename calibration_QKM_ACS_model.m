@@ -10,6 +10,9 @@ clc
 T_tracker_ref =  getReferenceFrame(importdata('re_ref.txt')',1);
 
 %% parameters decleration
+
+measurment_type = 2;
+
 % norminal length of links
 length_of_links = [491 350 350 84];
 
@@ -79,7 +82,7 @@ while j<1000
             P_n = Tn * P_c0_n_3;
         end
         
-        Q = Q_matrix(twist_matrix_n,theta_random_vec(i,:),num_of_ball);
+        Q = Q_matrix(twist_matrix_n,theta_random_vec(i,:),measurment_type,num_of_ball);
         P_a = samples(:,i);                                                 % actual SMR position
         dpc = P_a - P_n;                                                    % deviation of actual position and norminal position
 %         norm(dpc)                                                           % calculate norm of dpc
