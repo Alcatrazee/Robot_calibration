@@ -16,7 +16,7 @@ clc
 
 %% measurment type selector
 
-measurment_type = 1;        % 1: pose measurment   2: position measurment
+measurment_type = 2;        % 1: pose measurment   2: position measurment
 num_of_SMRs = 3;            % amount of SMRs, at least three to form a coordinate
 
 %% referenrce frame establisment
@@ -72,26 +72,28 @@ end
 %% read SMR positions and joint angles from files
 if measurment_type == 1
     
-    twist_matrix_0 = [[cross(q_vec_0,w_vec_0);w_vec_0],normed_M];               % nominal twist
-    twist_matrix_copy = twist_matrix_0;                                         % copy a twist for comparison
+    twist_matrix_n = [[cross(q_vec_0,w_vec_0);w_vec_0],normed_M];               % nominal twist
+    twist_matrix_copy = twist_matrix_n;                                         % copy a twist for comparison
     [samples,theta_random_vec] = retrive_data('POSES.txt','AnglesInDeg.txt');   % read and process into postures of end effector
     theta_random_vec = deg2rad(theta_random_vec);
     num_of_pts = length(theta_random_vec);
     theta_random_vec(:,7) = ones(num_of_pts,1)*theta_M;                         % the 7th column shall be set to thetaM
-    theta_random_vec(:,3) = theta_random_vec(:,3) - ones(num_of_pts,1)*pi/2;    % due to modeling difference, initial value of mathermatical model has a offset
-    
+
 elseif measurment_type == 2
     
-    twist_matrix_0 = [cross(q_vec_0,w_vec_0);w_vec_0];                          % nominal twist
-    twist_matrix_copy = twist_matrix_0;
+    twist_matrix_n = [cross(q_vec_0,w_vec_0);w_vec_0];                          % nominal twist
+    twist_matrix_copy = twist_matrix_n;
     theta_random_vec_deg = importdata('c_angles.txt');                          % import angle data from file, the input file is of degree, so we need to transform them into radias
     num_of_pts = length(theta_random_vec_deg);                                  % get number of points
     theta_random_vec = deg2rad(theta_random_vec_deg(:,1:6));                    % unit transformation
     samples = [importdata('c_poses.txt') ones(num_of_pts,1)]';                  % import measured data
-    theta_random_vec(:,3) = theta_random_vec(:,3) - ones(num_of_pts,1)*pi/2;    % offset correction
+%     theta_random_vec(:,3) = theta_random_vec(:,3) - ones(num_of_pts,1)*pi/2;      % offset correction
 end
 
-% transfor SMR position into reference frame.
+theta_random_vec(:,3) = theta_random_vec(:,3) - ones(num_of_pts,1)*pi/2;    % due to modeling difference, initial value of mathermatical model has a offset
+    
+% transform SMR position into reference frame.
+
 for i=1:num_of_pts
     if measurment_type == 1
         samples(:,:,i) = T_tracker_ref\samples(:,:,i);
@@ -121,17 +123,17 @@ SMR_index = 0;
 while j<20
     %% calculate A matrix and df*f^-1 (parameters identification)
     for i=1:num_of_pts                                                      % repeat num_of_pts times
-        [T_n,~,~] = FK(twist_matrix_0,theta_random_vec(i,:));               % T_n calculation
+        [T_n,~,~] = FK(twist_matrix_n,theta_random_vec(i,:));               % T_n calculation
         
         if measurment_type == 1
-            Q = Q_matrix(twist_matrix_0,theta_random_vec(i,:),measurment_type,SMR_index);             % Q matrix calculation
+            Q = Q_matrix(twist_matrix_n,theta_random_vec(i,:),measurment_type,SMR_index);             % Q matrix calculation
             T_n = T_n*g_st0;
             T_a = samples(:,:,i);
             df_f_inv(1+i*6-6:i*6) = log_my(T_a/T_n);
             A(1+i*6-6:i*6,:) = Q;
         elseif measurment_type == 2
             SMR_index = theta_random_vec_deg(i,7);                          % get index of SMR
-            Q = Q_matrix(twist_matrix_0,theta_random_vec(i,:),measurment_type,SMR_index);             % Q matrix calculation
+            Q = Q_matrix(twist_matrix_n,theta_random_vec(i,:),measurment_type,SMR_index);             % Q matrix calculation
             if(SMR_index==1)
                 P_n = T_n * P_c0_n_1;
             elseif(SMR_index==2)
@@ -149,17 +151,17 @@ while j<20
         end
         
     end
-    B = B_matrix(twist_matrix_0,measurment_type,num_of_SMRs);               % amazing matrix
+    B = B_matrix(twist_matrix_n,measurment_type,num_of_SMRs);               % amazing matrix
     k = (A*B)\df_f_inv;
     norm(k)
     
     % composition of twist
     for i=1:6
-        twist_matrix_0(:,i) = Adjoint(T_matrix(B(i*6-5:i*6,i*4-3:i*4)*k(i*4-3:i*4)))*twist_matrix_0(:,i);
+        twist_matrix_n(:,i) = Adjoint(T_matrix(B(i*6-5:i*6,i*4-3:i*4)*k(i*4-3:i*4)))*twist_matrix_n(:,i);
     end
     if(measurment_type==1)
         g_st0 = T_matrix(k(25:30))*g_st0;
-        twist_matrix_0(:,7) = log_my(g_st0);
+        twist_matrix_n(:,7) = log_my(g_st0);
         gst_n = g_st0;
     elseif(measurment_type==2)
         P_c0_n_1 = [k(25:27)+P_c0_n_1(1:3);1];                                  % composite smr positions in initial configuration
@@ -180,9 +182,9 @@ while j<20
     %% plot
     clf;
     if measurment_type == 1
-        draw_manipulator(twist_matrix_0,gst_n,'b',measurment_type);                 % draw robot frame with norminal twist
+        draw_manipulator(twist_matrix_n,gst_n,'b',measurment_type);                 % draw robot frame with norminal twist
     elseif measurment_type == 2
-        draw_manipulator_points(twist_matrix_0,[P_c0_n_1,P_c0_n_2,P_c0_n_3],'b');   % draw robot frame with norminal twist
+        draw_manipulator_points(twist_matrix_n,[P_c0_n_1,P_c0_n_2,P_c0_n_3],'b');   % draw robot frame with norminal twist
     end
     drawnow;
     if norm(k) < 10e-11                                                             % judge if it's able to quit the iteration
@@ -251,7 +253,7 @@ if measurment_type == 1
     % start testing
     for i=1:num_of_test_points
         truth_poses(:,:,i) = T_tracker_ref\test_poses(:,:,i);                   % transform reference frame
-        [estimated_T,~,~] = FK(twist_matrix_0,test_angles(i,:));                % estimate poses of EE with the same angles
+        [estimated_T,~,~] = FK(twist_matrix_n,test_angles(i,:));                % estimate poses of EE with the same angles
         estimated_poses(:,:,i) = estimated_T* gst_n;
         deviation(:,:,i) = truth_poses(:,:,i)/estimated_poses(:,:,i);           % calculate deviation of two poses
         
@@ -264,13 +266,6 @@ if measurment_type == 1
     disp(norm(delta_theta))
     disp 'average domega (mm)'
     disp(norm(norm_delta_eps(4:6,:)))
-    
-    %     q_origin = zeros(3,6);
-    %     q_after = zeros(3,6);
-    %     for i = 1:6
-    %         q_after(:,i) = cross(twist_matrix_0(4:6,i),twist_matrix_0(1:3,i));
-    %         q_origin(:,i) = cross(twist_matrix_copy(4:6,i),twist_matrix_copy(1:3,i));
-    %     end
     disp 'average position error'
     disp(mean(vecnorm(pose_deviation)))
     disp 'max  position error'
@@ -291,12 +286,12 @@ elseif measurment_type == 2
     
     % variables decleration
     estimated = zeros(4,num_of_test_points);
-    deviation = zeros(4,num_of_test_points);                                  % quotient of measured value and estimated value
+    deviation = zeros(4,num_of_test_points);                 
     delta_theta = zeros(1,num_of_test_points);
     
     % start testing
     for i=1:num_of_test_points
-        [estimated,~,~] = FK(twist_matrix_0,test_angles(i,:)); % estimate poses of EE with the same angles
+        [estimated,~,~] = FK(twist_matrix_n,test_angles(i,:)); % estimate poses of EE with the same angles
         SMR_index = test_angles_deg(i,ball_index);
         %     SMR_index = mod(i,3)+1;
         if(SMR_index==1)

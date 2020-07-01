@@ -1,15 +1,21 @@
 %% brief of this program
 % This program is for calibration simulation of robot arm QKM HL6 with
 % RoboDK. This program can calibrate the robot automatically, with randomly
-% generated joint angles, this program can reduce the composition to less
-% than 1e-10.
-% How to use it: open  RoboDK file(cali_center.rdk),
+% generated joint angles.
+
+% How to use it: open  RoboDK file(cali_sim.rdk),
 % then run this script.
 
 %% close all unecessary windows
 close all
 clear;
 clc
+
+%% switches
+
+paper_to_use = 0;           % 0:paper of Prof. Lou's   1:paper of Prof. Wu's
+measurment_type = 2;        % 1: pose measurment   2: position measurment
+num_of_SMRs = 3;            % amount of SMRs, at least three to form a coordinate
 
 %% RoboDK relative variables
 global RDK;
@@ -47,26 +53,22 @@ w_vec_0 = [0 0 1;
 %% g_st0 calculation(or M matrix from Park's paper)
 HomePosition = [0 0 90 0 0 0]';
 robot.MoveJ(HomePosition);
-% Pc0_1_in_tracker = get_SMR_pos(1);
-% Pc0_2_in_tracker = get_SMR_pos(2);
-% Pc0_3_in_tracker = get_SMR_pos(3);
-% P_c0_n_1 = T_tracker_ref\[Pc0_1_in_tracker;1];                                     % represents in reference frame
-% P_c0_n_2 = T_tracker_ref\[Pc0_2_in_tracker;1];
-% P_c0_n_3 = T_tracker_ref\[Pc0_3_in_tracker;1];                                  % represents in reference frame                        
-P_c0_n_1 = [-124,333,951 1]';
-P_c0_n_2 = [-124,513,841 1]';
-P_c0_n_3 = [-124,293,841 1]';
+Pc0_1_in_tracker = get_SMR_pos(1);
+Pc0_2_in_tracker = get_SMR_pos(2);
+Pc0_3_in_tracker = get_SMR_pos(3);
+P_c0_n_1 = T_tracker_ref\[Pc0_1_in_tracker;1];                                     % represents in reference frame
+P_c0_n_2 = T_tracker_ref\[Pc0_2_in_tracker;1];
+P_c0_n_3 = T_tracker_ref\[Pc0_3_in_tracker;1];                                  % represents in reference frame                        
 
 %% norminal twist_matrix_0; size = 6 x 7
 twist_matrix_n = [cross(q_vec_0,w_vec_0);w_vec_0];               % nominal twist
 twist_matrix_copy = twist_matrix_n;
 
 %% read SMR positions and joint angles from files
-num_of_pts = 50;
-% theta_random_vec = GetRandomAngles(num_of_pts);
-theta_random_vec_deg = importdata('angles.mat');
-theta_random_vec = deg2rad(theta_random_vec_deg(:,1:6));
-% theta_random_vec_deg = rad2deg(theta_random_vec(:,1:6));   
+num_of_pts = 20;
+theta_random_vec = GetRandomAngles(num_of_pts);
+% theta_random_vec = importdata('test_angles.txt');
+theta_random_vec_deg = rad2deg(theta_random_vec);                  
 samples = [MeasurePosition_threeSMR(theta_random_vec_deg);ones(1,num_of_pts)];
 theta_random_vec(:,3) = theta_random_vec(:,3) - ones(num_of_pts,1)*pi/2;
 
@@ -77,25 +79,38 @@ end
 
 
 %% variables declaration
+
 j = 0;                                              % iteration time
-eta_matrix = zeros(6,6);
-d_eta = zeros(45,1);
-dPc = zeros(3*num_of_pts,1);
-A_tilde = zeros(3*num_of_pts,45);
-norm_d_eta = [];
+if paper_to_use==0
+    eta_matrix = zeros(6,6);
+    d_eta = zeros(45,1);
+    dPc = zeros(3*num_of_pts,1);
+    A_tilde = zeros(3*num_of_pts,45);
+    norm_d_eta = [];
+elseif paper_to_use==1
+    df_f_inv = zeros(num_of_pts*3,1);
+    A = zeros(num_of_pts*3,36+num_of_SMRs*6);                               % A matrix
+    norm_k=[];                                                                  % for norm of dk visialization
+    SMR_index = 0;
+end
+
 norm_dpc = [];
 dPc_matrix = zeros(3,num_of_pts);
+
+
+%% add noise to samples
+% samples_noised = samples;
+% samples_noised(1:3,:) = samples(1:3,:) + rand(3,num_of_pts)/10;
 
 %% parameters identification and composition
 while j<1000
     %% calculate A matrix and df*f^-1 (parameters identification)
     for i=1:num_of_pts                                                      % repeat num_of_pts times
         [Tn,~,~] = FK(twist_matrix_n,theta_random_vec(i,:));                % Tn calculation                                                         
-%         num_of_ball = mod(i,3)+1;
-        num_of_ball = theta_random_vec_deg(i,7);
-        if(num_of_ball==1)
+        SMR_index = mod(i,3)+1;
+        if(SMR_index==1)
             P_n = Tn * P_c0_n_1;
-        elseif(num_of_ball==2)
+        elseif(SMR_index==2)
             P_n = Tn * P_c0_n_2;
         else
             P_n = Tn * P_c0_n_3;
@@ -104,61 +119,122 @@ while j<1000
         dpc = P_a - P_n;
         dPc(i*3-2:i*3) = dpc(1:3);
         dPc_matrix(:,i) = dpc(1:3);
-        A_tilde(i*3-2:i*3,:) = A_tilde_matrix(twist_matrix_n,eta_matrix,P_n,theta_random_vec(i,:),num_of_ball-1);  % A matrix calculation
+        if paper_to_use==0
+            A_tilde(i*3-2:i*3,:) = A_tilde_matrix(twist_matrix_n,eta_matrix,P_n,theta_random_vec(i,:),SMR_index-1);  % A matrix calculation
+        elseif paper_to_use==1
+            Q = Q_matrix(twist_matrix_n,theta_random_vec(i,:),measurment_type,SMR_index);
+            df_f_inv(i*3-2:i*3) = dpc(1:3);
+            A(3*i-2:3*i,:) = [eye(3) -hat(P_n(1:3))]*Q;
+        end
     end
-    d_eta = A_tilde\dPc;                                                          % solve for dp(derive of twist)
+    % difference
+    if paper_to_use==0
+        d_eta = A_tilde\dPc;                                                          % solve for dp(derive of twist)
+    elseif paper_to_use==1
+        B = B_matrix(twist_matrix_n,measurment_type,num_of_SMRs);               % amazing matrix
+        k = (A*B)\df_f_inv;  
+    end
     %% calculate observibility index 
-    [cols,rows] = size(A_tilde);
-    [U,S,V] = svd(A_tilde);
-    V = V';
-    singular_value_mul = 1;
-    for i=1:rank(A_tilde)
-        singular_value_mul = singular_value_mul*S(i,i);
-    end
-    observibility_index = singular_value_mul^(1/rows)/sqrt(num_of_pts)
+%     [cols,rows] = size(A_tilde);
+%     [U,S,V] = svd(A_tilde);
+%     V = V';
+%     singular_value_mul = 1;
+%     for i=1:rank(A_tilde)
+%         singular_value_mul = singular_value_mul*S(i,i);
+%     end
+%     observibility_index = singular_value_mul^(1/rows)/sqrt(num_of_pts)
     %% composition
     for i=1:6
-        eta_matrix(:,i) = eta_matrix(:,i)+d_eta(i*6-5:i*6);
-        twist_matrix_n(:,i) = Adjoint(T_matrix(eta_matrix(:,i)))*twist_matrix_copy(:,i);
+        if paper_to_use==0
+            eta_matrix(:,i) = eta_matrix(:,i)+d_eta(i*6-5:i*6);
+            twist_matrix_n(:,i) = Adjoint(T_matrix(eta_matrix(:,i)))*twist_matrix_copy(:,i);
+        elseif paper_to_use==1
+            twist_matrix_n(:,i) = Adjoint(T_matrix(B(i*6-5:i*6,i*4-3:i*4)*k(i*4-3:i*4)))*twist_matrix_n(:,i); 
+        end
     end
-    P_c0_n_1 = [P_c0_n_1(1:3) + d_eta(37:39);1];
-    P_c0_n_2 = [P_c0_n_2(1:3) + d_eta(40:42);1];
-    P_c0_n_3 = [P_c0_n_3(1:3) + d_eta(43:45);1];
+    if paper_to_use==0
+        P_c0_n_1 = [P_c0_n_1(1:3) + d_eta(37:39);1];
+        P_c0_n_2 = [P_c0_n_2(1:3) + d_eta(40:42);1];
+        P_c0_n_3 = [P_c0_n_3(1:3) + d_eta(43:45);1];
+    elseif paper_to_use==1
+        P_c0_n_1 = [k(25:27)+P_c0_n_1(1:3);1];                                  % composite smr positions in initial configuration
+        P_c0_n_2 = [k(28:30)+P_c0_n_2(1:3);1];
+        P_c0_n_3 = [k(31:33)+P_c0_n_3(1:3);1];
+    end
     %% data prepration of visialization
-    j=j+1;                                                                  % counter plus 1
-    norm_d_eta = [norm_d_eta norm(d_eta)];
+                                                                      % counter plus 1
+    if paper_to_use==0
+        norm_d_eta = [norm_d_eta norm(d_eta)];
+        disp 'norm of d_eta'
+        disp (norm(d_eta))   % show value of norm of dp
+    elseif paper_to_use==1
+        norm_k = [norm_k norm(k)];                                                  % minimization target value calculation
+        disp (norm(k))                                                              % show value of norm of dp                                                         % show number of iteration                              % calculate norm of deviation of positions
+    end
     norm_dpc = [norm_dpc norm(dPc_matrix)];
-    disp 'norm of dPc'
-    disp (norm_dpc(j))
-    disp 'norm of d_eta'
-    disp (norm(d_eta))                                                      % show value of norm of dp
+    
+    j=j+1;                                               
     disp (j)                                                                % show number of iteration
+    
     % plot
     clf;                                                                    % clear plot
     draw_manipulator_points(twist_matrix_n,[P_c0_n_1,P_c0_n_2,P_c0_n_3],'b');                     % draw nominal axis
     drawnow;
-    if norm(d_eta) < 1e-10                                                  % quit the for loop if deviation is less than 1e-5
-        break;
+    if paper_to_use==0
+        if norm(d_eta) < 1e-11                                                  % quit the for loop if deviation is less than 1e-5
+            break;
+        end
+    elseif paper_to_use==1
+        if norm(k) < 1e-11                                                             % judge if it's able to quit the iteration
+            break;
+        elseif (norm(k)>1e4)||j>100
+            break;
+        end
     end
+    
 end
 %% plot again
-fig2 = figure(2);                                                           % create another window
-bar3(norm_d_eta)                                                            % plot discrete data
-view(-60,20)                                                                % adjust cam 
-legend('||d¦Ç||')
+if paper_to_use==0
+    
+    fig2 = figure(2);                                                           % create another window
+    bar3(norm_d_eta)                                                            % plot discrete data
+    view(-60,20)                                                                % adjust cam 
+    legend('||deta||')
 
-fig3 = figure(3);
-bar3(norm_dpc);
-view(-60,20) 
-legend('||dPc||')                                                             % plot discrete data
+    fig3 = figure(3);
+    bar3(norm_dpc);
+    view(-60,20) 
+    legend('||dPc||')                                                             % plot discrete data
+elseif paper_to_use==1
+
+    fig = figure('name','result','position',[200 200 1200 600]);                                                           % create another window
+    subplot(1,2,1);
+    bar(norm_k)                                                                 % plot discrete data                                                               % adjust cam
+    legend('||dk||')
+    xlabel('num of iteration')
+    ylabel('||dk||')
+    for i=1:length(norm_k)
+       text(i-0.35,norm_k(i)+max(norm_k)/40,num2str(norm_k(i),'%3.3f'))
+    end
+    yaxis([0 max(norm_k)*1.1])
+    title('dk')
+    
+    subplot(1,2,2);
+    bar(norm_dpc);
+    legend('||dPc||')                                                             % plot discrete data
+    xlabel('num of iteration')
+    ylabel('||dPc||')
+    for i=1:length(norm_dpc)
+       text(i-0.35,norm_dpc(i)+max(norm_dpc)/40,num2str(norm_dpc(i),'%3.3f'))
+    end
+    yaxis([0 max(norm_dpc)*1.1])
+    title('dPc')
+end
 %% verify the new twist
 num_of_test_points = 50;
-ball_index = 7;
 test_angles = GetRandomAngles(num_of_test_points);                          % generate new points
 %test_angles = importdata('test_angles.txt');
 test_angles_deg = rad2deg(test_angles);                                     % you know what it is
-test_angles_deg(:,7) = randi([1,3],50,1);
-% test_angles_deg(:,8) = randi([1,3],50,1);
 truth_positions = [MeasurePosition_threeSMR(test_angles_deg);ones(1,num_of_test_points)];           % launch sim on RoboDK for data
 test_angles(:,3) = test_angles(:,3) - ones(num_of_test_points,1)*pi/2;      % for FK calculation
 
@@ -175,11 +251,10 @@ dis_deviation_sum = 0;
 % start testing
 for i=1:num_of_test_points
     [estimated,~,~] = FK(twist_matrix_n,test_angles(i,:)); % estimate poses of EE with the same angles
-    num_of_ball = test_angles_deg(i,ball_index);
-%     num_of_ball = mod(i,3)+1;
-    if(num_of_ball==1)
+    SMR_index = mod(i,3)+1;
+    if(SMR_index==1)
         Pc_n = estimated * P_c0_n_1;
-    elseif(num_of_ball==2)
+    elseif(SMR_index==2)
         Pc_n = estimated * P_c0_n_2;
     else
         Pc_n = estimated * P_c0_n_3;
@@ -188,8 +263,9 @@ for i=1:num_of_test_points
     deviation(:,i) = Pc_a - Pc_n;           % calculate deviation of two poses
 end
 disp 'norm of distance deviation:'
-norm(deviation(1:3,:))
-[P_c0_n_1 P_c0_n_2 P_c0_n_3]
+disp(norm(deviation(1:3,:)))
+disp("calibrated SMRs' position")
+disp([P_c0_n_1 P_c0_n_2 P_c0_n_3])
 
 %% some useful functions
 % get reference frame using 3 SMRs
@@ -285,9 +361,8 @@ function Pc = MeasurePosition_threeSMR(angles)
     NumOfPts = size_of_angles(1);
     Pc = zeros(3,NumOfPts);
     for i = 1:NumOfPts
-        robot.MoveJ(angles(i,1:6));
-%         SMR_n = mod(i,3)+1;
-        SMR_n = angles(i,7);
+        robot.MoveJ(angles(i,:));
+        SMR_n = mod(i,3)+1;
         Pc(:,i) = get_SMR_pos(SMR_n);
     end
 end
