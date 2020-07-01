@@ -2,7 +2,7 @@
 %  This script is to calibrate a QKM robot HL6 with a FARO laser tracker in
 %   two different ways, change the measuring type in line 9, which number 1
 %   represents pose measurment, and number 2 represents position measurment
-%   where both use three SMRs.
+%   where both use three SMRs, different number represent using different algorithm.
 %
 %  Both measurments used a user frame outside of the robot, therefore there
 %   will be a process of frame transforming from laser tracker's coordinate
